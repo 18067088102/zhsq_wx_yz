@@ -1,0 +1,79 @@
+/* pages/livePayment/list.wxss */
+
+.pay_container {
+  width: 100%;
+  height: 100%;
+  background: #F6F8FA;
+  padding: 0 32rpx;
+}
+
+.pay_item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.date_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 28rpx;
+}
+
+.pay_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30rpx 24rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}
+
+.box_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pay_img {
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 20rpx;
+}
+
+.pay_date_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.text1 {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #00172F;
+  line-height: 32rpx;
+  margin-bottom: 18rpx;
+}
+
+.text2 {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 26rpx;
+}
+
+.money_text {
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #00172F;
+  line-height: 36rpx;
+}

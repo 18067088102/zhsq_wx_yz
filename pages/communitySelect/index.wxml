@@ -1,0 +1,24 @@
+<!--pages/communitySelect/index.wxml-->
+
+<wxs module="util" src="../../utils/filter.wxs"></wxs>
+
+<v-searchAdd searchText="搜索社区名称" bind:commit="onCommit" bind:cancel="onCancel" />
+<view class="community_container" style="{{isNoData?'background: #fff':''}}">
+	<view class="empty-page" wx:if="{{isNoData}}">
+		<v-empty nullTitle="暂无数据…" />
+	</view>
+	<l-loadmore show="{{show}}" type="{{type}}" isLeft="{{true}}" wx:if="{{!isNoData}}">
+		<view class="list_container" wx:for="{{listsItem}}" wx:key="k" bindtap="onSelect" data-index="{{index}}"
+			slot="content">
+			<image mode="aspectFill" class="community_image" src="/images/common/icon_xiaoqu.png"></image>
+			<view class="community_info">
+				<view class="name_distance">
+					<text class="name_text">{{item.name}}</text>
+					<text class="distance_text" wx:if="{{fromID!=1}}">{{util.formatDistance(item.distance)}}km</text>
+				</view>
+				<text class="address_text" wx:if="{{fromID!=1}}">{{item.address}}</text>
+				<text class="address_text" wx:if="{{fromID==1}}">{{item.villageName}}{{item.buildingName}}栋{{item.roomName}}室</text>
+			</view>
+		</view>
+	</l-loadmore>
+</view>

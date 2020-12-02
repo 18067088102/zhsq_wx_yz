@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-empty": "../../components/emptyPage/index"
+  },
+  "navigationBarTitleText": "住户管理"
+}

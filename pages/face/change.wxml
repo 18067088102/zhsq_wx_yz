@@ -1,0 +1,24 @@
+<!--pages/face/change.wxml-->
+
+<view class="change_face">
+	<view class="face_head" wx:if="{{type==0}}">
+		<text class="face_title" style="margin-top: 100rpx;">请拍照或上传本人正面免冠头像照片</text>
+		<text class="face_detail">保证照片清晰，以确保刷脸开门的通过率</text>
+		<view class="upload_face" bindtap="{{imgPath?'ViewImage':'ChooseImage'}}">
+			<image wx:if="{{!imgPath}}" class="face_img" src="/images/mine/icon_mine_add.png"></image>
+			<image wx:if="{{imgPath}}" class="face_img1" src="{{imgUrl}}"></image>
+			<view wx:if="{{imgPath}}" class="delete_box bg-black" catchtap="DelImg">
+				<text class="cuIcon-close"></text>
+			</view>
+		</view>
+	</view>
+	<view class="face_head" wx:if="{{type==1}}">
+		<view class="upload_success">
+			<image class="success_img" src="/images/mine/icon_mine_success.png"></image>
+		</view>
+		<text class="face_title" style="margin-top: 50rpx;">上传成功</text>
+		<text class="face_detail">已成功开通刷脸开门 通过小区门禁</text>
+	</view>
+	<button class="submit-btn {{type==0?'':'submit-btn1'}}" loading="{{isLoading}}" bindtap="submitHandler"
+		disabled="{{isDisable}}">{{buttonText}}</button>
+</view>

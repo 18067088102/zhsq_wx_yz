@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-upload": "../../components/uploadImage/index"
+  },
+  "navigationBarTitleText": "社区登记"
+}

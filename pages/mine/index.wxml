@@ -1,0 +1,38 @@
+<!--pages/mine/index.wxml-->
+
+<view class="mine_container">
+	<view class="account_info" bindtap="onClickAccount">
+		<view class="account_box">
+			<image class="avator_img" src="{{faceImgPath?faceImgUrl:'/images/mine/icon_avator.png'}}"></image>
+			<view class="account_detail">
+				<text class="account_text">{{nameTitle}}</text>
+				<text class="account_detail">{{detailTitle}}</text>
+			</view>
+		</view>
+		<view class="review_box">
+			<image class="review_img" src="/images/mine/icon_renzheng.png"></image>
+			<text class="review_text">{{isAuth?'已认证':'未认证'}}</text>
+		</view>
+	</view>
+	<view class="list_container" wx:for="{{mineListPics}}" wx:key="k" wx:for-item="item1">
+		<view class="mine_list_item" wx:for="{{item1.items}}" wx:key="j" wx:for-item="item2" data-index="{{item1.id}}-{{index+1}}" bindtap="onClickItem">
+			<view class="item_left">
+				<image class="left_img" src="/images/mine/{{item2.pic}}.png"></image>
+				<text class="left_text">{{item2.title}}</text>
+			</view>
+			<view class="item_right">
+				<text class="right_text" wx:if="{{item2.tip&&item2.tip!='0'}}">{{item2.tip}}</text>
+				<image class="right_img" src="/images/mine/icon_mine_right.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="popup_box" style="{{!isLogin?'':'background: #FCFAE5;'}}" wx:if="{{!isLogin||!isAuth}}">
+		<view class="box_left">
+			<image style="{{!isLogin?'':'width: 29rpx;'}}" class="popup_img" src="{{!isLogin?'/images/common/icon_logo.png':'/images/common/icon_renzheng.png'}}"></image>
+			<text class="popup_text" style="{{!isLogin?'':'color: #FF7A05;'}}">{{!isLogin?'请登录，登录后查看更多信息':'您还未进行社区认证，请认证'}}</text>
+		</view>
+		<view>
+			<button style="{{!isLogin?'':'background: #FF7A05;color: #FCFAE5;'}}" class="popup_btn animation-{{animation=='shake'?'shake':''}} shadow" bindtap="getUserInfo">{{!isLogin?'去登录':'去认证'}}</button>
+		</view>
+	</view>
+</view>

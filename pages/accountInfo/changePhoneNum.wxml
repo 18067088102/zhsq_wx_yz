@@ -1,0 +1,20 @@
+<!--pages/accountInfo/changePhoneNum.wxml-->
+
+<view class='login-container'>
+  <!-- 原手机号 -->
+  <view class='phone-view common-view'>
+    <input class='login-input' value="{{phoneNo}}" disabled="{{true}}"></input>
+  </view>
+  <!-- 新手机号 -->
+  <view class='phone-view common-view' style="margin-top: 32rpx;">
+    <input class='login-input' value="{{newPhoneNo}}" bindinput="getValue" bindblur="newPhoneNoBlur" data-id="newPhoneNo" type='number' maxlength='11' placeholder='请输入新手机号' placeholder-class='placeholder'></input>
+  </view>
+  <!-- 验证码 -->
+  <view class='vscode-view common-view'>
+    <input class='login-input' value="{{smsCode}}" bindinput="getValue" data-id="smsCode" maxlength='6' placeholder='输入验证码' placeholder-class='placeholder'></input>
+    <view class='line'></view>
+    <text class='vscode-text' bindtap='onGetCode'>{{getCodeText}}</text>
+  </view>
+  <!-- 修改按钮 -->
+  <button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
+</view>

@@ -1,0 +1,3 @@
+/* pages/resident/detail.wxss */
+
+@import "../../custom_detail.wxss";

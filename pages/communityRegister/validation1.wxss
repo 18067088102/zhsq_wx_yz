@@ -1,0 +1,7 @@
+/* pages/communityRegister/validation1.wxss */
+
+@import "../../custom_detail.wxss";
+
+.add_container {
+  background: #F6F8FA;
+}

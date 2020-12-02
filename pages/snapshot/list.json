@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-loadmore": "../../components/loadmore/index",
+    "v-empty": "../../components/emptyPage/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "navigationBarTitleText":""
+}

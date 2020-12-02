@@ -1,0 +1,146 @@
+/* pages/mine/index.wxss */
+
+.mine_container {
+  width: 100%;
+  height: 100%;
+  background: #F6F8FA;
+}
+
+.account_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #218EFF;
+  width: 100%;
+  padding: 33rpx 0 33rpx 32rpx;
+}
+
+.account_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avator_img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 24rpx;
+  border-radius: 50%;
+}
+
+.account_detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.account_text {
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 50rpx;
+  margin-bottom: 10rpx;
+}
+
+.account_detail {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 28rpx;
+}
+
+.review_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 18rpx 24rpx;
+  background: #FFE7BC;
+  border-radius: 30rpx 0px 0px 30rpx;
+}
+
+.review_img {
+  width: 24rpx;
+  height: 28rpx;
+  margin-right: 8rpx;
+}
+
+.review_text {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #975D17;
+  line-height: 24rpx;
+}
+
+.list_container {
+  padding: 0 32rpx;
+  margin-top: 30rpx;
+}
+
+.mine_list_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 104rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+
+.mine_list_item:first-child {
+  border-radius: 8rpx 8rpx 0rpx 0rpx;
+}
+
+.mine_list_item:last-child {
+  border-radius: 0rpx 0rpx 8rpx 8rpx;
+}
+
+.item_left,
+.item_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left_img {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 16rpx;
+}
+
+.left_text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #00172F;
+  line-height: 42rpx;
+}
+
+.right_text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.right_img {
+  width: 15rpx;
+  height: 24rpx;
+}
+
+.center {
+  height: 500rpx;
+  width: 500rpx;
+  background: #fff;
+  text-align: center;
+  line-height: 500rpx;
+  color: #555;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}

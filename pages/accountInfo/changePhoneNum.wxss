@@ -1,0 +1,3 @@
+/* pages/accountInfo/changePhoneNum.wxss */
+
+@import "../../fr.wxss";

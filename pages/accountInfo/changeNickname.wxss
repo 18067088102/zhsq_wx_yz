@@ -1,0 +1,3 @@
+/* pages/accountInfo/changeNickname.wxss */
+
+@import "../../fr.wxss";

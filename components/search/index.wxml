@@ -1,0 +1,13 @@
+<!--components/search-add/index.wxml-->
+
+<view class="procurement-head">
+	<view class="search-container">
+		<image class="search-img" src="/images/common/icon_search.png"></image>
+		<input class="input" value='{{keyword}}' bindfocus="onSearchFocus" bindblur="onSearchBlur" 
+    bindinput="onSearchInput" bind:confirm="onTapSearch" placeholder-class='placeholder-input' 
+    placeholder='{{searchText}}'></input>
+		<view class="cancel_box" wx:if="{{isShowCancel}}" bind:tap="onCancelImg">
+			<image class='cancel-icon' src='/images/common/icon_cancel.png'></image>
+		</view>
+	</view>
+</view>

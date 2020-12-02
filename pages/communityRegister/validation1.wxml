@@ -1,0 +1,93 @@
+<!--pages/communityRegister/validation1.wxml-->
+
+<view class="add_container">
+	<view class="cu-bar bg-commonGray">
+		<view class="action">
+			<text class="action1">基本信息</text>
+		</view>
+		<view class="action" style="font-size:24rpx;">
+			所有信息仅供小区物业登记住户和绑定房产使用
+		</view>
+	</view>
+	<view class="detail-list" wx:if="{{fromID==1}}">
+		<view class="list-item solid-bottom">
+			<text class="title-text">选择房屋</text>
+			<text class="detail-text">{{currentHouse}}</text>
+		</view>
+	</view>
+	<view class="cu-form-group solid-bottom" wx:if="{{fromID==0}}">
+		<view class="title">居住类型</view>
+		<picker bindchange="liveChange" value="{{index2}}" range="{{picker2}}">
+			<view class="picker {{index2!=null?'color2':'color1'}}">
+				{{index2!=null?picker2[index2]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">人口类型</view>
+		<picker bindchange="registerChange" value="{{index1}}" range="{{picker1}}">
+			<view class="picker {{index1!=null?'color2':'color1'}}">
+				{{index1!=null?picker1[index1]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">与户主关系</view>
+		<picker bindchange="relationChange" value="{{index3}}" range="{{picker3}}">
+			<view class="picker {{index3!=null?'color2':'color1'}}">
+				{{index3!=null?picker3[index3]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">姓名</view>
+		<input value="{{userName}}" bindinput="userNameInput" placeholder="请输入" placeholder-class='placeholder'
+			maxlength="15"></input>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">证件类型</view>
+		<picker bindchange="cardChange" value="{{index4}}" range="{{picker4}}">
+			<view class="picker {{index4!=null?'color2':'color1'}}">
+				{{index4!=null?picker4[index4]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">证件号</view>
+		<input value="{{idCardNum}}" bindinput="idNumInput" bindblur="idNumBlur" placeholder="请输入"
+			placeholder-class='placeholder' type="idcard" maxlength="18"></input>
+	</view>
+	<view class="detail-list">
+		<view class="list-item solid-bottom">
+			<text class="title-text">出生日期</text>
+			<text class="detail-text">{{birthDate}}</text>
+		</view>
+		<view class="list-item solid-bottom">
+			<text class="title-text">性别</text>
+			<text class="detail-text">{{sex}}</text>
+		</view>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">手机号码</view>
+		<input value="{{phoneNum}}" bindinput="phoneNumInput" bindblur="phoneNumBlur" placeholder="请输入"
+			placeholder-class='placeholder' maxlength="11" type="number"></input>
+	</view>
+	<view class="line-view"></view>
+	<view class="cu-bar bg-white">
+		<view class="action">
+			<text class="action1">人脸照片</text>
+		</view>
+		<view class="action">
+			{{imgList.length}}/1
+		</view>
+	</view>
+	<v-upload imgList="{{imgList}}" pictures="{{imgList}}" bind:getPictures="onGetPictures"
+		bind:deletePicture="onDeletePicture" />
+	<view class="tip_view">
+		<text class="tip_text">注：请拍照或上传本人清晰头像，以确保刷脸开门的通过率</text>
+	</view>
+	<view class="btn-view">
+		<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler"
+			disabled="{{isDisable}}">{{buttonText}}</button>
+	</view>
+</view>

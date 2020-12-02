@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "l-loadmore": "../../components/loadmore/index",
+    "v-searchAdd": "../../components/search/index",
+    "v-empty": "../../components/emptyPage/index"
+  },
+  "navigationBarTitleText": "社区选择",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,24 @@
+<!--pages/vehicle/list.wxml-->
+
+<view class="vehicle_container" style="{{isNoData?'background: #fff':''}}">
+  <view class="empty-page" wx:if="{{isNoData}}">
+    <v-empty nullTitle="暂无车辆数据…" />
+  </view>
+  <l-loadmore show="{{show}}" type="{{type}}" isLeft="{{true}}" wx:if="{{!isNoData}}">
+    <view class="cu-list" slot="content">
+      <view class="vehicle_item cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" bindtouchstart='ListTouchStart'
+        bindtouchmove='ListTouchMove' bindtouchend='ListTouchEnd' data-target="move-box-{{index}}"
+        wx:for="{{listsItem}}" wx:key="k" bindtap="onClickItem" data-index="{{index}}">
+        <text class="num_text">{{item.cardNumber}}</text>
+        <text class="date_text">车主姓名：{{item.ownerName}}</text>
+        <text class="date_text">车主电话：{{item.ownerPhone}}</text>
+        <view class="move" data-id="{{index}}" catchtap="onDeleteItem">
+          <view class="bg-red">删除</view>
+        </view>
+      </view>
+    </view>
+  </l-loadmore>
+</view>
+<view class="add_right" bindtap="onAddVehicle">
+  <image class="add_img" src="/images/common/icon_add.png"></image>
+</view>

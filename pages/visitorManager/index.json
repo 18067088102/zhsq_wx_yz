@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-loadmore": "../../components/loadmore/index",
+    "v-empty": "../../components/emptyPage/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "访客管理"
+}

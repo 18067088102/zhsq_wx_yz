@@ -1,0 +1,59 @@
+/* components/search-add/index.wxss */
+
+.procurement-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 105rpx;
+  padding: 15rpx 32rpx 30rpx;
+  background: rgba(255, 255, 255, 1);
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 686rpx;
+  height: 60rpx;
+  background: rgba(242, 242, 243, 1);
+  border-radius: 30rpx;
+}
+
+.search-img {
+  width: 25rpx;
+  height: 25rpx;
+  margin: -2rpx 14rpx 0 26rpx;
+}
+
+.input {
+  width: calc(100% - 107rpx);
+  height: 60rpx;
+  /* background: red; */
+}
+
+.placeholder-input {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(178, 178, 178, 1);
+  line-height: 37rpx;
+}
+
+.cancel_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60rpx;
+  height: 60rpx;
+  /* background: red; */
+}
+
+.cancel-icon {
+  width: 24rpx;
+  height: 24rpx;
+  /* margin-left: 16rpx;
+  margin-right: 20rpx; */
+}

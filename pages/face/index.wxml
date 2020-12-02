@@ -1,0 +1,14 @@
+<!--pages/face/index.wxml-->
+
+<view class="face_head">
+  <image class="face_img" src="{{faceImgPath?faceImgUrl:'/images/mine/icon_avator.png'}}" bindtap="onPreviewTap"></image>
+  <text class="face_title">已开通刷脸开门</text>
+  <text class="face_detail">已成功开通刷脸开门 通过小区门禁</text>
+</view>
+<view class="line-view"></view>
+<view class="about_list">
+	<view class="about_list_item" bindtap="onChangePhoto">
+		<text class="title_text">更换照片</text>
+		<image class="right_img" src="/images/mine/icon_mine_right.png"></image>
+	</view>
+</view>

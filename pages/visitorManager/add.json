@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-upload": "../../components/uploadImage/index"
+  },
+  "navigationBarTitleText": "新增访客"
+}

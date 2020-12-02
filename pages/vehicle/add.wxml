@@ -1,0 +1,53 @@
+<!--pages/vehicle/add.wxml-->
+
+<view class="add_container">
+	<view class="cu-bar bg-commonGray">
+		<view class="action">
+			<text class="action1">车主信息</text>
+		</view>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title"><text style="color: #FF2553;">*</text> 车主姓名</view>
+		<input value="{{ownerName}}" bindinput="ownerNameInput" placeholder="请输入" placeholder-class='placeholder' maxlength="5"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title"><text style="color: #FF2553;">*</text> 车主电话</view>
+		<input value="{{ownerPhone}}" bindinput="ownerPhoneInput" bindblur="ownerPhoneBlur" placeholder="请输入" placeholder-class='placeholder' maxlength="11" type="number"></input>
+	</view>
+	<view class="cu-bar bg-commonGray">
+		<view class="action">
+			<text class="action1">车辆信息</text>
+		</view>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">车辆类型</view>
+		<picker bindchange="TypeChange" value="{{index1}}" range="{{picker1}}">
+			<view class="picker {{index1!=null?'color2':'color1'}}">
+				{{index1!=null?picker1[index1]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group solid-bottom" bindtap="onVehicleNum">
+		<view class="title"><text style="color: #FF2553;">*</text> 车牌号</view>
+		<picker value="{{item.detail_title}}" disabled>
+			<view class="picker {{vehicleNum!=''?'color2':'color1'}}">
+				{{vehicleNum!=''?vehicleNum:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">车牌颜色</view>
+		<input value="{{carCardColor}}" bindinput="carCardColorInput" placeholder="请输入" placeholder-class='placeholder' maxlength="10"></input>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">车身颜色</view>
+		<input value="{{carColor}}" bindinput="carColorInput" placeholder="请输入" placeholder-class='placeholder' maxlength="10"></input>
+	</view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">车辆品牌</view>
+		<input value="{{carBrandName}}" bindinput="carBrandNameInput" placeholder="请输入" placeholder-class='placeholder' maxlength="10"></input>
+	</view>
+	<view class="btn-view">
+		<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
+	</view>
+</view>

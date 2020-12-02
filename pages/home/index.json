@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-loadmore": "../../components/loadmore/index",
+    "v-empty": "../../components/emptyPage/index"
+  },
+  "navigationBarTitleText": "智慧社区"
+}

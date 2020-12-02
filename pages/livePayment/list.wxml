@@ -1,0 +1,25 @@
+<!--pages/livePayment/list.wxml-->
+
+<view class="pay_container" style="{{isNoData?'background: #fff':''}}">
+  <view class="empty-page" wx:if="{{isNoData}}">
+    <v-empty nullTitle="暂无缴费数据…" />
+  </view>
+  <l-loadmore show="{{show}}" type="{{type}}" isLeft="{{true}}" wx:if="{{!isNoData}}">
+    <view class="pay_item" wx:for="{{listsItem}}" wx:key="k" slot="content">
+      <view class="date_box">
+        <text>{{item.year}}年</text>
+      </view>
+      <view class="pay_box">
+        <view class="box_left">
+          <image class="pay_img" src="{{fromID==0?'/images/common/icon_wuyefei.png':'/images/common/icon_chefei.png'}}">
+          </image>
+          <view class="pay_date_box">
+            <text class="text1">缴费周期：12个月</text>
+            <text class="text2">{{item.updateTime}}</text>
+          </view>
+        </view>
+        <text class="money_text">{{item.payedMoney}}元</text>
+      </view>
+    </view>
+  </l-loadmore>
+</view>

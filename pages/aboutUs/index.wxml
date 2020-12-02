@@ -1,0 +1,12 @@
+<!--pages/aboutUs/index.wxml-->
+
+<view class="about_head">
+  <image class="head_img" src='/images/mine/icon_logo.png'></image>
+  <text class="head_text">智慧社区</text>
+</view>
+<view class="about_list">
+  <view class="about_list_item" wx:for="{{listItem}}" wx:key="k" bindtap="onSelectItem" data-index="{{index}}">
+    <text class="title_text">{{item.title_text}}</text>
+    <text class="detail_text">{{item.detail_text}}</text>
+  </view>
+</view>

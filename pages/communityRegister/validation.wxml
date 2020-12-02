@@ -1,0 +1,61 @@
+<!--pages/communityRegister/validation.wxml-->
+
+<view class="community_container">
+  <view class="cu-bar bg-commonGray">
+    <view class="action">
+      <text class="action1">房屋信息</text>
+    </view>
+  </view>
+  <view class="cu-form-group solid-bottom" bindtap="onSelectVillage">
+    <view class="title">社区</view>
+    <picker disabled>
+      <view class="picker {{villageName?'color2':'color1'}}">
+        {{villageName?villageName:'请选择'}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group solid-bottom">
+    <view class="title">楼栋号</view>
+    <picker bindchange="buildingChange" value="{{index2}}" range="{{picker2}}">
+      <view class="picker {{index2!=null?'color2':'color1'}}">
+        {{index2!=null?picker2[index2]:'请选择'}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group solid-bottom">
+    <view class="title">单元房号</view>
+    <picker bindchange="roomChange" value="{{index3}}" range="{{picker3}}">
+      <view class="picker {{index3!=null?'color2':'color1'}}">
+        {{index3!=null?picker3[index3]:'请选择'}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-bar bg-commonGray">
+    <view class="action">
+      <text class="action1">验证手机</text>
+    </view>
+    <view class="action">
+      请填写已在物业登记的手机号
+    </view>
+  </view>
+  <view class="login-content">
+    <view class="account-container solid-bottom">
+      <view class="account-input">
+        <text class="input-text">手机号</text>
+        <input class='login-input' value="{{phoneNo}}" bindinput="getValue" bindblur="phoneNoBlur" data-id="phoneNo" type='number'
+          maxlength='11' placeholder="请输入手机号" placeholder-class='placeholder1'></input>
+      </view>
+    </view>
+    <view class="account-container solid-bottom">
+      <view class="account-input">
+        <text class="input-text">验证码</text>
+        <input class='login-input' value="{{smsCode}}" bindinput="getValue" data-id="smsCode" type='number'
+          maxlength='6' placeholder='输入验证码' placeholder-class='placeholder1'></input>
+        <text class='vscode-text' bindtap='onGetCode'>{{getCodeText}}</text>
+      </view>
+    </view>
+  </view>
+  <button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler"
+    disabled="{{isDisable}}">{{buttonText}}</button>
+
+</view>

@@ -1,0 +1,9 @@
+// import api from '../utils/api.js';
+
+var formatDistance = function (distance) {
+  return distance.toFixed(1)
+}
+
+module.exports = {
+  formatDistance: formatDistance
+}

@@ -1,0 +1,23 @@
+var filter = {
+  replaceHtml: function(str) {
+    var reg = getRegExp("<[^>]+>", "g");
+    var font = str.replace(reg, '');
+    return font;
+  }
+}
+
+var cut = {
+  sub: function(val) {
+    if (val.length == 0 || val == undefined) {
+      return;
+    }
+    if (val.length > 0 && (val.substring(0, 1)) == 0) {
+      return val.substring(1, 4);
+    }
+    return val;
+  }
+}
+module.exports = {
+  replaceHtml: filter.replaceHtml,
+  sub: cut.sub
+}

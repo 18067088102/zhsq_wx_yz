@@ -1,0 +1,28 @@
+<!--pages/snapshot/add.wxml-->
+
+<view class="add_snap">
+	<view class="line-view" wx:if="{{idx==0}}"></view>
+	<view class="cu-form-group solid-bottom" wx:if="{{idx==0}}">
+		<view class="title">报修类型</view>
+		<view class="type_box">
+			<view class="type_box_item {{index==typeIndex?'active_bg':'normal_bg'}}" wx:for="{{typeArr}}" wx:key="k" bindtap="onSelectType" data-index="{{index}}">
+				<text class="{{index==typeIndex?'active_color':'normal_color'}}">{{item}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group solid-bottom" wx:if="{{idx==0}}">
+		<view class="title">报修区域</view>
+		<input value="{{repairArea}}" bindinput="repairAreaInput" placeholder="请输入" placeholder-class='placeholder' maxlength="20"></input>
+	</view>
+	<view class="line-view"></view>
+	<view class="cu-form-group">
+		<view class="title">问题描述</view>
+	</view>
+	<view class="cu-form-group">
+		<textarea maxlength="-1" value="{{textArea}}" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入你的问题..." placeholder-class='placeholder'></textarea>
+	</view>
+	<v-upload class="upload_view" imgList="{{imgList}}" pictures="{{imgList}}" bind:getPictures="onGetPictures" bind:deletePicture="onDeletePicture" />
+	<view class="btn-view">
+		<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
+	</view>
+</view>

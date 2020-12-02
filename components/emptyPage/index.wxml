@@ -1,0 +1,4 @@
+<view class="null-view">
+  <image class="null-img" src="/images/common/icon_null_img.png"></image>
+  <text class="null-text">{{nullTitle}}</text>
+</view>

@@ -1,0 +1,19 @@
+<!--pages/notice/list.wxml-->
+<wxs module="filter" src="../../utils/filterValue.wxs"></wxs>
+
+<view class="noticeList" style="{{isNoData?'background: #fff':''}}">
+	<view class="empty-page" wx:if="{{isNoData}}">
+		<v-empty nullTitle="暂无小区风采…" />
+	</view>
+	<l-loadmore show="{{show}}" type="{{type}}" isLeft="{{true}}" wx:if="{{!isNoData}}">
+		<view class="noticeItem" wx:for="{{elegantsArr}}" wx:key="k" bindtap="onElegantDetail" data-index="{{index}}" slot="content">
+			<view class="notice_name">
+				<text class="name_text">{{item.title}}</text>
+				<text class="date_text">{{item.updateTime}}</text>
+			</view>
+			<view class="content">
+				<text decode="{{true}}">{{filter.replaceHtml(item.content)}}</text>
+			</view>
+		</view>
+	</l-loadmore>
+</view>

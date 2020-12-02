@@ -1,0 +1,30 @@
+<!--pages/feedBack/index.wxml-->
+
+<view class="feed_container">
+	<view class="cu-form-group solid-bottom">
+		<view class="title">反馈类型</view>
+		<picker bindchange="TypeChange" value="{{index1}}" range="{{picker1}}">
+			<view class="picker {{index1!=null?'color2':'color1'}}">
+				{{index1!=null?picker1[index1]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class='textarea_wrapper'>
+		<l-textarea border="{{false}}" value="{{textArea}}" bind:linchange="onTextAreaChange" placeholder="请输入反馈内容（字数300）以内..." maxlength='300' />
+	</view>
+	<view class="line-view"></view>
+	<view class="cu-form-group solid-bottom">
+		<view class="title">手机/邮箱(选填)</view>
+		<input value="{{reportPhone}}" bindinput="reportPhoneInput" bindblur="reportPhoneBlur" placeholder="请输入" placeholder-class='placeholder' type="number"></input>
+	</view>
+	<view class="cu-bar bg-white">
+		<view class="action">
+			<text class="action1">上传图片</text>
+		</view>
+		<view class="action">
+			{{imgList.length}}/6
+		</view>
+	</view>
+	<v-upload maxLength="6" imgList="{{imgList}}" bind:getPictures="onGetPictures" bind:deletePicture="onDeletePicture" />
+	<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
+</view>

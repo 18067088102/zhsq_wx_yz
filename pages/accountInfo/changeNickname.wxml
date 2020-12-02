@@ -1,0 +1,10 @@
+<!--pages/accountInfo/changeNickname.wxml-->
+
+<view class='login-container'>
+  <!-- 昵称 -->
+  <view class='phone-view common-view'>
+    <input class='login-input' value="{{nickName}}" bindinput="getValue" data-id="nickName" maxlength='15' placeholder='请输入昵称' placeholder-class='placeholder'></input>
+  </view>
+  <!-- 修改按钮 -->
+  <button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
+</view>

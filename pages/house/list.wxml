@@ -1,0 +1,35 @@
+<!--pages/house/list.wxml-->
+
+<view class="house_container">
+	<view class="house_head">
+		<view class="head_top">
+			<text class="current_text">当前房产</text>
+		</view>
+		<text class="house_text">{{currentAllName}}</text>
+	</view>
+	<view class="empty-page" wx:if="{{isNoData}}" style="{{isNoData?'background:#F6F8FA;':''}}">
+		<v-empty nullTitle='暂无房产…' />
+	</view>
+	<view class="house_item" wx:for="{{listsItem}}" wx:key="k" bindtap="onChangeHouse" data-index="{{index}}"  wx:if="{{!isNoData}}">
+		<view class="house_info {{item.householdsNum!=0||item.tenantsNum!=0?'solid-bottom':''}}">
+			<view class="info_top">
+				<text class="name_text">{{item.villageName}}</text>
+				<view class="house_type">
+					<text class="type_text">{{item.relationName}}</text>
+				</view>
+			</view>
+			<text class="detail_text">{{item.buildingName}}栋{{item.roomName}}室</text>
+		</view>
+		<view class="item_bottom" wx:if="{{item.householdsNum!=0||item.tenantsNum!=0}}">
+			<view class="owner_type_box" wx:if="{{item.householdsNum!=0}}">
+				<text class="owner_type_text">住户({{item.householdsNum}})</text>
+			</view>
+			<view class="owner_type_box" wx:if="{{item.tenantsNum!=0}}" style="margin-left: 24rpx;">
+				<text class="owner_type_text">租客({{item.tenantsNum}})</text>
+			</view>
+		</view>
+	</view>
+	<view class="add_right" bindtap="onAddHouse">
+		<image class="add_img" src="/images/common/icon_add.png"></image>
+	</view>
+</view>

@@ -1,0 +1,61 @@
+<!--pages/snapshot/list.wxml-->
+
+<view class="snap_head">
+	<view class="navbar" style='height:{{navHeight}}rpx;'>
+		<view class="backImg_box" bindtap="onNavBack">
+			<image class="back_img" src="/images/common/icon_back.png"></image>
+		</view>
+		<view class="snap_type_box" style="margin-top:{{navTop-8}}rpx;" wx:for="{{typeArr}}" wx:key="k"
+			bindtap="onSelectType" data-index="{{index}}">
+			<text class="type_text {{index==typeIndex?'active_color':'normal_color'}}">{{item}}</text>
+		</view>
+	</view>
+	<view class="nav">
+		<view class="nav_item" wx:for="{{Tabs}}" wx:key='k' bindtap="tabSelect" data-id="{{index}}">
+			<view class="item_content {{index==TabCur?'text-theme cur':'text-gray'}}">
+				{{Tabs[index]}}
+			</view>
+		</view>
+	</view>
+</view>
+<view class="snap_container" style="{{isNoData?'background: #fff':''}};padding: {{navHeight+90}}rpx 32rpx 30rpx;">
+	<view class="empty-page" wx:if="{{isNoData}}">
+		<v-empty nullTitle="暂无数据…" />
+	</view>
+	<l-loadmore show="{{show}}" type="{{type}}" isLeft="{{true}}" wx:if="{{!isNoData}}">
+		<view class="cu-list" slot="content">
+			<view class="snap_item cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" bindtouchstart="{{item.handleStatus!='0'?'ListTouchStart':''}}"
+				bindtouchmove="{{item.handleStatus!='0'?'ListTouchMove':''}}" bindtouchend="{{item.handleStatus!='0'?'ListTouchEnd':''}}" data-target="move-box-{{index}}"
+				wx:for="{{listsItem}}" wx:key="k" bindtap="onSelectItem" data-index="{{index}}">
+				<view class="date_status solid-bottom">
+					<text class="date_text">{{typeIndex==0?item.repairTime:item.uploadTime}}</text>
+					<view class="status_box {{item.handleStatus=='0'?'red_bg':'green_bg'}}">
+						<text>{{item.handleStatus=='0'?'待处理':'已处理'}}</text>
+					</view>
+				</view>
+				<view class="snap_content {{item.handleStatus=='0'?'solid-bottom':''}}">
+					<text class="content_text">{{typeIndex==0?item.repairDescription:item.convenientDescription}}</text>
+					<view class="tag_box" style="margin-bottom: 20rpx;" wx:if="{{typeIndex==0}}">
+						<text class="tag_text">{{item.repairType=="0"?'公共区域报修':'私人区域报修'}}</text>
+					</view>
+					<view class="bg-white">
+						<view class="grid col-4 grid-square">
+							<view class="bg-img" wx:for="{{repiarsArr[index]}}" wx:key="z" style="background-image:url({{item}});"></view>
+						</view>
+					</view>
+				</view>
+				<view class="operation_box" wx:if="{{item.handleStatus=='0'}}">
+					<view class="operation_btn" data-id="{{index}}" catchtap="onDeleteItem">
+						<text>撤销</text>
+					</view>
+				</view>
+				<view class="move" data-id="{{index}}" catchtap="onDeleteItem">
+					<view class="bg-red">删除</view>
+				</view>
+			</view>
+		</view>
+	</l-loadmore>
+</view>
+<view class="add_right" bindtap="onAddSnap">
+	<image class="add_img" src="/images/common/icon_add.png"></image>
+</view>

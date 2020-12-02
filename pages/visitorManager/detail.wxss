@@ -1,0 +1,3 @@
+/* pages/visitorManager/detail.wxss */
+
+@import "../../custom_detail.wxss";

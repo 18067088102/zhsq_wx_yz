@@ -1,0 +1,23 @@
+<!--pages/user/register/register.wxml-->
+
+<view class='login-container'>
+  <!-- 手机号 -->
+  <view class='phone-view common-view'>
+    <input class='login-input' value="{{phoneNo}}" bindinput="getValue" bindblur="phoneNoBlur" data-id="phoneNo" type='number' maxlength='11' placeholder='请输入手机号' placeholder-class='placeholder'></input>
+  </view>
+  <!-- 验证码 -->
+  <view class='vscode-view common-view'>
+    <input class='login-input' value="{{smsCode}}" bindinput="getValue" data-id="smsCode" maxlength='6' placeholder='输入验证码' placeholder-class='placeholder'></input>
+    <view class='line'></view>
+    <text class='vscode-text' bindtap='onGetCode'>{{getCodeText}}</text>
+  </view>
+  <!-- 密码 -->
+  <view class='vscode-view common-view'>
+    <input class='login-input' value="{{password}}" bindinput="getValue" data-id="password" type='default' maxlength='20' placeholder='6-20位数字或字母组成的密码' placeholder-class='placeholder' password="{{!seePsw}}"></input>
+    <view class="seePsw-view" bindtap="onSeePsw">
+      <image class="seePsw-img" src="{{seePsw?'/images/common/notsee.png':'/images/common/see.png'}}"></image>
+    </view>
+  </view>
+  <!-- 注册按钮 -->
+  <button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
+</view>

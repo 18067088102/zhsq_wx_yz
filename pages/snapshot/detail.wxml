@@ -1,0 +1,69 @@
+<!--pages/snapshot/detail.wxml-->
+
+<view class="detail_container">
+	<view class="snap_info">
+		<view class="info_head">
+			<text class="info_text">报修信息</text>
+		</view>
+		<view class="info_content">
+			<view class="content_item" wx:if="{{typeIndex==0}}">
+				<text class="item_title">报修类型：</text>
+				<text class="item_detail">{{dataDic.repairType=='0'?'公共区域报修':'私人区域报修'}}</text>
+			</view>
+			<view class="content_item" wx:if="{{typeIndex==0}}">
+				<text class="item_title">报修区域：</text>
+				<text class="item_detail">{{dataDic.repairArea}}</text>
+			</view>
+			<view class="content_item">
+				<text class="item_title">问题描述：</text>
+				<text class="item_detail">{{typeIndex==0?dataDic.repairDescription:dataDic.convenientDescription}}</text>
+			</view>
+			<view class="content_item">
+				<text class="item_title">图片说明：</text>
+			</view>
+		</view>
+		<view class="bg-white">
+			<view class="grid col-4 grid-square">
+				<view class="bg-img" wx:for="{{repiarsArr}}" wx:key="z" style="background-image:url({{item}});" catchtap="onPreviewTap" data-index="{{index}}"></view>
+			</view>
+		</view>
+	</view>
+	<view class="line-view"></view>
+	<view class="snap_info">
+		<view class="info_head">
+			<text class="info_text">处理情况</text>
+		</view>
+		<view class="info_content">
+			<view class="content_item">
+				<text class="item_title">处理结果：</text>
+				<view class="status_box {{status=='1'?'green_bg':'red_bg'}}">
+					<text>{{status=='1'?'已处理':'待处理'}}</text>
+				</view>
+			</view>
+			<view class="content_item" wx:if="{{status=='1'}}">
+				<text class="item_title">处 理 人 ：</text>
+				<text class="item_detail">{{dataDic.handlerName}}</text>
+			</view>
+			<view class="content_item" wx:if="{{status=='1'}}">
+				<text class="item_title">联系电话：</text>
+				<text class="item_detail">{{dataDic.handlerPhone}}</text>
+			</view>
+			<view class="content_item" wx:if="{{status=='1'}}">
+				<text class="item_title">处理时间：</text>
+				<text class="item_detail">{{dataDic.handleTime}}</text>
+			</view>
+			<view class="content_item" wx:if="{{status=='1'}}">
+				<text class="item_title">处理反馈：</text>
+				<text class="item_detail">{{dataDic.handleFeedback}}</text>
+			</view>
+			<view class="content_item" wx:if="{{status=='1'}}">
+				<text class="item_title">现场照片：</text>
+			</view>
+		</view>
+		<view class="bg-white" wx:if="{{status=='1'}}">
+			<view class="grid col-4 grid-square">
+				<view class="bg-img" wx:for="{{handlesArr}}" wx:key="z" style="background-image:url({{item}});" catchtap="onPreviewTap1" data-index="{{index}}"></view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,68 @@
+ <!--pages/login/index.wxml-->
+
+<scroll-view class="login_container" scroll-y="false">
+	<view class="login_head">
+		<text class="login_type {{loginType==2?'active':''}}" bindtap="changeActive" data-id="2">验证码登录</text>
+		<text class="middle_line"></text>
+		<text class="login_type {{loginType==1?'active':''}}" bindtap="changeActive" data-id="1">账号登录</text>
+	</view>
+	<view class="login-content" wx:if="{{loginType ==1}}">
+		<view class="account-container">
+			<view class="account-input">
+				<text class="input-text">账号</text>
+				<input class='login-input' value="{{phoneNo}}" bindinput="getValue" bindblur="phoneNoBlur" data-id="phoneNo" type='number'
+					maxlength='11' placeholder="请输入手机号" placeholder-class='placeholder1' focus='true'></input>
+			</view>
+			<view class="input-line"></view>
+		</view>
+		<view class="account-container">
+			<view class="account-input">
+				<text class="input-text">密码</text>
+				<input class='login-input' value="{{password}}" bindinput="getValue" bindblur="pswBlur" data-id="password" type='default'
+					maxlength='20' placeholder="请输入密码" placeholder-class='placeholder1' password='{{!seePsw}}'></input>
+				<view class="seePsw-view" bindtap="onSeePsw">
+					<image class="seePsw-img" src="{{seePsw?'/images/common/notsee.png':'/images/common/see.png'}}"></image>
+				</view>
+			</view>
+			<view class="input-line"></view>
+		</view>
+	</view>
+	<view class="login-content" wx:else>
+		<view class="account-container">
+			<view class="account-input">
+				<text class="input-text">手机号</text>
+				<input class='login-input' value="{{phoneNo}}" bindinput="getValue" data-id="phoneNo" type='number'
+					maxlength='11' placeholder="请输入手机号" placeholder-class='placeholder1' focus='true'></input>
+			</view>
+			<view class="input-line"></view>
+		</view>
+		<view class="account-container">
+			<view class="account-input">
+				<text class="input-text">验证码</text>
+				<input class='login-input' value="{{smsCode}}" bindinput="getValue" data-id="smsCode" type='number'
+					maxlength='6' placeholder='输入验证码' placeholder-class='placeholder1'></input>
+				<text class='vscode-text' bindtap='onGetCode'>{{getCodeText}}</text>
+			</view>
+			<view class="input-line"></view>
+		</view>
+	</view>
+	<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler"
+		disabled="{{isDisable}}">{{buttonText}}</button>
+	<view class="tips">
+		<text class="com">还没有账号？</text>
+		<text class="blueColor" bindtap="toRegister">去注册</text>
+		<text class="line"></text>
+		<text class="com" bindtap="toForget">忘记密码</text>
+	</view>
+	<view class="third_login">
+		<view class="third_head">
+			<view class="head_line"></view>
+			<text class="head_text">其他登录方式</text>
+			<view class="head_line"></view>
+		</view>
+		<view class="wx_login" bindtap="onWXLogin">
+			<image class="wx_img" src="/images/common/icon_weixin.png"></image>
+			<text>微信登录</text>
+		</view>
+	</view>
+</scroll-view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-pupop": "../../components/popup/index"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#218EFF",
+  "navigationBarTitleText": "我的"
+}

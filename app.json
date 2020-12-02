@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/communitySelect/index",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/index",
+    "pages/commonPhone/index",
+    "pages/mine/index",
+    "pages/livePayment/index",
+    "pages/aboutUs/index",
+    "pages/feedBack/index",
+    "pages/accountInfo/index",
+    "pages/login/index",
+    "pages/register/index",
+    "pages/visitorManager/index",
+    "pages/visitorManager/add",
+    "pages/setting/index",
+    "pages/communityRegister/validation",
+    "pages/communityRegister/validation1",
+    "pages/notice/list",
+    "pages/notice/detail",
+    "pages/face/index",
+    "pages/face/change",
+    "pages/resident/list",
+    "pages/house/list",
+    "pages/vehicle/list",
+    "pages/resident/detail",
+    "pages/vehicle/add",
+    "pages/vehicle/detail",
+    "pages/visitorManager/detail",
+    "pages/vehicle/vehicleNum",
+    "pages/snapshot/list",
+    "pages/snapshot/add",
+    "pages/snapshot/detail",
+    "pages/livePayment/list",
+    "pages/accountInfo/changeNickname",
+    "pages/accountInfo/changePhoneNum"
+  ],
+  "window": {
+    "backgroundColor": "#F6F8FA",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#000",
+    "selectedColor": "#218EFF",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "/images/tabbar/icon_home.png",
+        "selectedIconPath": "/images/tabbar/icon_home_sel.png"
+      },
+      {
+        "pagePath": "pages/commonPhone/index",
+        "text": "常用电话",
+        "iconPath": "/images/tabbar/icon_common.png",
+        "selectedIconPath": "/images/tabbar/icon_common_sel.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "/images/tabbar/icon_mine.png",
+        "selectedIconPath": "/images/tabbar/icon_mine_sel.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

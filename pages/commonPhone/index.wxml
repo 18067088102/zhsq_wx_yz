@@ -1,0 +1,29 @@
+<!--pages/common/index.wxml-->
+
+<view class="common_container" style="{{!isLogin||!isAuth||isNoData?'background: #fff;':''}}">
+	<view class="empty-page" wx:if="{{!isLogin||!isAuth||isNoData}}">
+		<v-empty nullTitle="{{isNoData?'暂无常用电话…':'登录认证后可查看…'}}" />
+	</view>
+	<l-loadmore show="{{show}}" type="{{type}}" isLeft="{{true}}" wx:if="{{isLogin&&isAuth&&!isNoData}}">
+		<view class="common_list_item" wx:for="{{listsItem}}" wx:key='k' slot="content">
+			<view class="common_left">
+				<text class="phone_text">{{item.phone}}</text>
+				<text class="name_text">{{item.name}}</text>
+			</view>
+			<image class="phone_img" src="/images/common/icon_hujiao.png" bindtap="onClickItem" data-index="{{index}}"></image>
+		</view>
+	</l-loadmore>
+	<view class="popup_box" style="{{!isLogin?'':'background: #FCFAE5;'}}" wx:if="{{!isLogin||!isAuth}}">
+		<view class="box_left">
+			<image style="{{!isLogin?'':'width: 29rpx;'}}" class="popup_img"
+				src="{{!isLogin?'/images/common/icon_logo.png':'/images/common/icon_renzheng.png'}}"></image>
+			<text class="popup_text"
+				style="{{!isLogin?'':'color: #FF7A05;'}}">{{!isLogin?'请登录，登录后查看更多信息':'您还未进行社区认证，请认证'}}</text>
+		</view>
+		<view>
+			<button style="{{!isLogin?'':'background: #FF7A05;color: #FCFAE5;'}}"
+				class="popup_btn animation-{{animation=='shake'?'shake':''}} shadow"
+				bindtap="getUserInfo">{{!isLogin?'去登录':'去认证'}}</button>
+		</view>
+	</view>
+</view>

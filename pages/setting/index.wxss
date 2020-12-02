@@ -1,0 +1,38 @@
+/* pages/setting/index.wxss */
+
+.about_list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #F6F8FA;
+}
+
+.about_list_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 106rpx;
+  padding: 0 32rpx;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+}
+
+.title_text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 42rpx;
+}
+
+.right_img {
+  width: 15rpx;
+  height: 24rpx;
+}
+
+.submit-btn {
+  margin-top: 100rpx;
+}

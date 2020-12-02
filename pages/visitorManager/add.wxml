@@ -1,0 +1,52 @@
+<!--pages/visitorManager/add.wxml-->
+
+<view class="add_container">
+
+</view>
+<view class="cu-bar bg-commonGray">
+  <view class="action">
+    <text class="action1">基本信息</text>
+  </view>
+</view>
+<view class="cu-form-group solid-bottom">
+	<view class="title">访客姓名</view>
+	<input value="{{visitorName}}" bindinput="visitorNameInput" placeholder="请输入" placeholder-class='placeholder' maxlength="5"></input>
+</view>
+<view class="cu-form-group solid-bottom">
+	<view class="title">手机号码</view>
+	<input value="{{visitorPhone}}" bindinput="visitorPhoneInput" bindblur="visitorPhoneBlur" placeholder="请输入" placeholder-class='placeholder' type="number" maxlength="11"></input>
+</view>
+<view class="cu-form-group solid-bottom">
+	<view class="title">来访人数</view>
+	<input value="{{visitorNum}}" bindinput="visitorNumInput" placeholder="请输入" placeholder-class='placeholder' type="number" maxlength="5"></input>
+</view>
+<view class="cu-form-group solid-bottom">
+	<view class="title">来访时间</view>
+	<picker mode="date" value="{{date1}}" bindchange="DateChange">
+		<view class="picker {{date1?'color2':'color1'}}">
+			{{date1?date1:'请选择'}}
+		</view>
+	</picker>
+</view>
+<view class="cu-form-group">
+	<view class="title">来访事由</view>
+</view>
+<view class="cu-form-group solid-bottom">
+	<textarea maxlength="-1" value="{{textArea}}" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入来访事由" placeholder-class='placeholder'></textarea>
+</view>
+<view class="line-view"></view>
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="action1">人脸照片</text>
+  </view>
+  <view class="action">
+    {{imgList.length}}/1
+  </view>
+</view>
+<v-upload class="upload_view" bind:getPictures="onGetPictures" bind:deletePicture="onDeletePicture" />
+<view class="tip_view">
+	<text class="tip_text">注：请拍照或上传本人清晰头像，以确保刷脸开门的通过率</text>
+</view>
+<view class="btn-view">
+	<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
+</view>

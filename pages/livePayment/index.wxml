@@ -1,0 +1,10 @@
+<!--pages/livePayment/index.wxml-->
+
+<view class="pay_container">
+  <view class="pay_list_item" wx:for="{{payListPics}}" wx:key="k" bindtap="onPayment" data-index="{{index}}">
+    <view class="item_left">
+      <image class="left_img" src="{{item.pic}}"></image>
+      <text class="left_text">{{item.title}}</text>
+    </view>
+  </view>
+</view>

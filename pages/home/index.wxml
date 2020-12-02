@@ -1,0 +1,84 @@
+<!--pages/home/index.wxml-->
+<wxs module="filter" src="../../utils/filterValue.wxs"></wxs>
+
+<view class="home_container">
+	<view class="community_container" bindtap="pageToVillage">
+		<view class="community_name">
+			<image class="location_img" src="/images/common/icon_weizhi.png"></image>
+			<text class="name_text">{{villageName}}</text>
+			<image class="right_arrow" src="/images/common/icon_right.png"></image>
+		</view>
+		<text class="room_text" wx:if="{{isLogin&&buildNum}}">{{buildNum}}栋{{roomNum}}室</text>
+	</view>
+	<view class="banner">
+		<swiper indicator-dots="{{indicatorDots}}" current="{{index}}" autoplay="{{autoplay}}" interval="{{interval}}"
+			duration="{{duration}}" circular="{{true}}" style="height:240rpx;width:686rpx">
+			<block wx:for="{{bannerList1.length!=0?bannerList1:bannerList}}" wx:key="k">
+				<swiper-item bindtap="onClickBanner" data-index="{{index}}">
+					<image src="{{item}}" style="width:100%;height:100%;"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="first-container">
+		<view class="upload-item" wx:for="{{uploadMaps}}" wx:key="index" bindtap="onSwitchClick" data-index="{{index}}">
+			<image class="upload-img" src="/images/common/{{item.img}}.png"></image>
+			<text class="upload-text">{{item.title}}</text>
+		</view>
+	</view>
+	<view class="notice" wx:if="{{!hiddenNotice}}">
+		<view class="notice_head">
+			<image class="head_img" src="/images/common/icon_notice.png"></image>
+		</view>
+		<view style="flex-grow:1">
+			<swiper indicator-dots="{{false}}" circular="{{true}}" autoplay="{{autoplay}}" interval="{{interval}}"
+				duration="{{duration}}" vertical="{{true}}" style="height:40rpx;">
+				<block wx:for="{{headlinesArr}}" wx:key="k">
+					<swiper-item bindtap="onHeadLinesDetail" data-index="{{index}}">
+						<view class="notice_content">{{item.title}}</view>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+		<image class="close_img" src="/images/common/home_icon_cuowu.png" bindtap="onCloseNotice"></image>
+	</view>
+	<view class="line-view" style="margin-top:30rpx;"></view>
+	<view class="noticeList">
+		<view class="list_top">
+			<view class="top_left">
+				<image src="/images/common/icon_gobggao.png" style="width:36rpx;height:34rpx;margin-right:12rpx;"></image>
+				<text class="new_notice_text">小区风采</text>
+			</view>
+			<view style="display:flex;align-items:center" bindtap="onLookAll">
+				<text class="notice_more">查看全部</text>
+				<image src="/images/common/home_icon_arrow_right.png" style="width:10rpx;height:18rpx;margin-left:9rpx;">
+				</image>
+			</view>
+		</view>
+		<view class="empty-page" style="margin-top: 70rpx;" wx:if="{{isNoData}}">
+			<v-empty nullTitle="暂无小区风采…" />
+		</view>
+		<view class="noticeItem" wx:for="{{elegantsArr}}" wx:key="k" bindtap="onElegantDetail" data-index="{{index}}" wx:if="{{!isNoData}}">
+			<view class="notice_name">
+				<text class="name_text">{{item.title}}</text>
+				<text class="date_text">{{item.updateTime}}</text>
+			</view>
+			<view class="content">
+				<text decode="{{true}}">{{filter.replaceHtml(item.content)}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="popup_box" style="{{!isLogin?'':'background: #FCFAE5;'}}" wx:if="{{!isLogin||!isAuth}}">
+		<view class="box_left">
+			<image style="{{!isLogin?'':'width: 29rpx;'}}" class="popup_img"
+				src="{{!isLogin?'/images/common/icon_logo.png':'/images/common/icon_renzheng.png'}}"></image>
+			<text class="popup_text"
+				style="{{!isLogin?'':'color: #FF7A05;'}}">{{!isLogin?'请登录，登录后查看更多信息':'您还未进行社区认证，请认证'}}</text>
+		</view>
+		<view>
+			<button style="{{!isLogin?'':'background: #FF7A05;color: #FCFAE5;'}}"
+				class="popup_btn animation-{{animation=='shake'?'shake':''}} shadow"
+				bindtap="getUserInfo">{{!isLogin?'去登录':'去认证'}}</button>
+		</view>
+	</view>
+</view>

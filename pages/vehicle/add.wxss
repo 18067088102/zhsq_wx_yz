@@ -1,0 +1,7 @@
+/* pages/vehicle/add.wxss */
+
+.add_container {
+  width: 100%;
+  min-height: 100%;
+  background: #F6F8FA;
+}

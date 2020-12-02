@@ -1,0 +1,5 @@
+/* pages/visitorManager/add.wxss */
+
+.add_container {
+  background: #F6F8FA;
+}

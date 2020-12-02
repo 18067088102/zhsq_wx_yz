@@ -1,0 +1,18 @@
+<!--pages/accountInfo/index.wxml-->
+
+<view class="account_container">
+	<view class="avator_container">
+		<text class="left_text">头像</text>
+		<image class="avator_img" src="{{faceImg?faceImgPath:'/images/mine/icon_avator.png'}}" bindtap="onPreviewTap"></image>
+	</view>
+	<view class="line-view"></view>
+	<view class="list_container">
+		<view class="info_list solid-bottom" wx:for="{{listItems}}" wx:key="k" bindtap="onClickItem" data-index="{{index}}">
+			<text class="left_text">{{item.title_text}}</text>
+			<view class="rigth_info">
+				<text class="right_text">{{item.detail_text?item.detail_text:'无'}}</text>
+				<image class="right_img" src="/images/mine/icon_mine_right.png" wx:if="{{item.isShowArrow}}"></image>
+			</view>
+		</view>
+	</view>
+</view>

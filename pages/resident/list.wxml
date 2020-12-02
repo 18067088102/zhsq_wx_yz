@@ -1,0 +1,56 @@
+<!--pages/resident/list.wxml-->
+
+<view class="nav">
+	<view class="nav_item" wx:for="{{Tabs}}" wx:key='k' bindtap="tabSelect" data-id="{{index}}">
+		<view class="item_content {{index==TabCur?'text-theme cur':'text-gray'}}">
+			{{Tabs[index]}}
+		</view>
+	</view>
+</view>
+<view class="list_container cu-list" style="{{residentsArr.length==0?'background: #fff;':''}}" wx:if="{{TabCur==0}}">
+	<view class="list_item cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" bindtouchstart='ListTouchStart' 
+	bindtouchmove='ListTouchMove' bindtouchend='ListTouchEnd' data-target="move-box-{{index}}" wx:for="{{residentsArr}}" wx:key="k" bindtap="onClickItem" 
+	data-index="{{index}}">
+		<image class="item_img" src="{{residentsFaces[index]?residentsFaces[index]:'/images/mine/icon_avator.png'}}"></image>
+		<view class="item_right">
+			<view class="right_top">
+				<text class="name_text">{{item.name}}</text>
+				<view class="type_box">
+					<text>{{item.relationName}}</text>
+				</view>
+			</view>
+			<text class="phone_text" style="margin-top: 17rpx;">{{item.mobile}}</text>
+		</view>
+		<view class="move" data-id="{{index}}" catchtap="onDeleteItem">
+			<view class="bg-red">删除</view>
+		</view>
+	</view>
+	<view class="empty-page" wx:if='{{residentsArr.length==0}}'>
+		<v-empty nullTitle="暂无住户信息…" />
+	</view>
+</view>
+<view class="list_container cu-list" style="{{retentsArr.length==0?'background: #fff;':''}}" wx:if="{{TabCur==1}}">
+	<view class="list_item cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" bindtouchstart='ListTouchStart' 
+	bindtouchmove='ListTouchMove' bindtouchend='ListTouchEnd' data-target="move-box-{{index}}" wx:for="{{retentsArr}}" wx:key="k" bindtap="onClickItem" 
+	data-index="{{index}}">
+		<image class="item_img" src="{{retentsFaces[index]?retentsFaces[index]:'/images/mine/icon_avator.png'}}"></image>
+		<view class="item_right">
+			<view class="right_top">
+				<text class="name_text">{{item.name}}</text>
+				<view class="type_box">
+					<text>{{item.relationName}}</text>
+				</view>
+			</view>
+			<text class="phone_text" style="margin-top: 17rpx;">{{item.mobile}}</text>
+		</view>
+		<view class="move" data-id="{{index}}" catchtap="onDeleteItem">
+			<view class="bg-red">删除</view>
+		</view>
+	</view>
+	<view class="empty-page" wx:if='{{retentsArr.length==0}}'>
+		<v-empty nullTitle="暂无租客信息…" />
+	</view>
+</view>
+<view class="add_right" bindtap="onAddResident">
+	<image class="add_img" src="/images/common/icon_add.png"></image>
+</view>

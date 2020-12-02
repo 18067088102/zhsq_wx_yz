@@ -1,0 +1,64 @@
+/* pages/face/index.wxss */
+
+.face_head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 50rpx 0 40rpx;
+}
+
+.face_img {
+  width: 186rpx;
+  height: 186rpx;
+  border-radius: 50%;
+}
+
+.face_title {
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #2A2C2F;
+  line-height: 70rpx;
+  margin-top: 30rpx;
+}
+
+.face_detail {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 40rpx;
+}
+
+.about_list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0 32rpx;
+  background: #fff;
+}
+
+.about_list_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 106rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.title_text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 42rpx;
+}
+
+.right_img {
+  width: 15rpx;
+  height: 24rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-textarea": "../../components/textarea/index",
+    "v-upload": "../../components/uploadImage/index"
+  },
+  "navigationBarTitleText": "意见反馈"
+}

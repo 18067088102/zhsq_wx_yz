@@ -1,0 +1,190 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "colorui/animation.wxss";
+
+.loading-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+view {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+page {
+  background-color: #fff;
+  height: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+}
+image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 表单页样式 */
+.line-view {
+  width: 100%;
+  height: 20rpx;
+  background: #F6F8FA;
+}
+
+.color1 {
+  color:rgba(186, 186, 186, 1);
+}
+
+.color2 {
+  color:rgba(47,45,44,1);
+}
+
+.title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(121, 121, 121, 1);
+  line-height: 42rpx;
+}
+
+.cu-form-group>input {
+  text-align: right;
+  margin-right: -20rpx;
+}
+
+.placeholder {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(186, 186, 186, 1);
+  line-height: 42rpx;
+  text-align: right;
+}
+
+.action1 {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(47, 45, 44, 1);
+  line-height: 48rpx;
+}
+
+/* 表单页提交按钮样式 */
+.btn-view {
+  width: 100%;
+  height: 165rpx;
+}
+
+.submit-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 64rpx);
+  height: 88rpx;
+  background-color: #218EFF;
+  border-radius: 44rpx;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top: 67rpx;
+}
+
+.submit-btn::after {
+  border: none;
+}
+
+/* 上传人脸图片提示文字样式 */
+.tip_view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30rpx 20rpx;
+  background: #fff;
+}
+
+.tip_text {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #9EA0A7;
+  line-height: 26rpx;
+}
+
+/* 列表页空状态图样式 */
+.empty-page {
+  margin-top: 291rpx;
+  background: #fff;
+}
+
+/* 列表页新增按钮样式 */
+.add_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: transparent;
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+}
+
+.add_img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* 首页或个人中心页登录弹框样式 */
+.popup_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80rpx;
+  padding: 0 32rpx;
+  background: #218EFF;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.box_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.popup_img {
+  width: 32rpx;
+  height: 34rpx;
+  margin-right: 13rpx;
+}
+
+.popup_text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 28rpx;
+}
+
+.popup_btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6rpx 30rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #218EFF;
+  line-height: 40rpx;
+}
+

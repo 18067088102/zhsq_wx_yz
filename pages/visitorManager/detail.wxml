@@ -1,0 +1,47 @@
+<!--pages/visitorManager/detail.wxml-->
+
+<view class="detail_container">
+  <view class="cu-bar bg-commonGray">
+    <view class="action">
+      <text class="action1">访客信息</text>
+    </view>
+  </view>
+  <view class="detail-list">
+    <view class="list-item solid-bottom">
+      <text class="title-text">访客姓名</text>
+      <text class="detail-text">{{dataDic.visitorName}}</text>
+    </view>
+    <view class="list-item solid-bottom">
+      <text class="title-text">手机号码</text>
+      <text class="detail-text">{{dataDic.visitorPhone}}</text>
+    </view>
+    <view class="list-item solid-bottom">
+      <text class="title-text">来访人数</text>
+      <text class="detail-text">{{dataDic.visitorNum}}</text>
+    </view>
+    <view class="list-item solid-bottom">
+      <text class="title-text">来访时间</text>
+      <text class="detail-text">{{dataDic.visitTime}}</text>
+    </view>
+    <view class="list-item solid-bottom">
+      <text class="title-text">来访事由</text>
+      <text class="detail-text">{{dataDic.visitReason}}</text>
+    </view>
+  </view>
+  <view class="line-view"></view>
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="action1">人脸照片</text>
+    </view>
+  </view>
+  <view class="bg-white padding-left padding-right">
+    <view class="grid col-4 grid-square">
+      <view class="bg-img" wx:for="{{imgs}}" wx:key="k" style="background-image:url({{item}});" catchtap="onPreviewTap"
+        data-index="{{index}}"></view>
+    </view>
+  </view>
+  <view class="btn-view" wx:if="{{dataDic.visitStatus=='0'}}">
+    <button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler"
+      disabled="{{isDisable}}">{{buttonText}}</button>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+/* pages/aboutUs/index.wxss */
+
+.about_head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 380rpx;
+}
+
+.head_img {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 47rpx 0 30rpx;
+}
+
+.head_text {
+  font-size: 36rpx;
+  font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+  font-weight: bold;
+  color: #63656B;
+  line-height: 54rpx;
+}
+
+.about_list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 32rpx;
+}
+
+.about_list_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 106rpx;
+}
+
+.about_list_item:first-child {
+  border-bottom: 1rpx solid #eee;
+}
+
+.title_text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 42rpx;
+}
+
+.detail_text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #2A2C2F;
+  line-height: 42rpx;
+}

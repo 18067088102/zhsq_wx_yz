@@ -1,0 +1,9 @@
+<!--pages/setting/index.wxml-->
+
+<view class="about_list">
+	<view class="about_list_item" wx:for="{{listItem}}" wx:key="k" bindtap="onSelectItem" data-index="{{index}}">
+		<text class="title_text">{{item}}</text>
+		<image class="right_img" src="/images/mine/icon_mine_right.png"></image>
+	</view>
+	<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
+</view>

@@ -1,0 +1,30 @@
+<!--pages/visitorManager/index.wxml-->
+
+<view class="visitor_container" style="{{isNoData?'background: #fff':''}}">
+	<view class="empty-page" wx:if="{{isNoData}}">
+		<v-empty nullTitle="暂无访客数据…" />
+	</view>
+	<l-loadmore show="{{show}}" type="{{type}}" isLeft="{{true}}" wx:if="{{!isNoData}}">
+		<view class="cu-list" slot="content">
+			<view class="visitor_item cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" bindtouchstart='ListTouchStart'
+				bindtouchmove='ListTouchMove' bindtouchend='ListTouchEnd' data-target="move-box-{{index}}"
+				wx:for="{{listsItem}}" wx:key="k" bindtap="onDetail" data-index="{{index}}">
+				<image class="avator_img" src="{{faceImgArr[index]?faceImgArr[index]:'/images/mine/icon_avator.png'}}"></image>
+				<view class="visitor_right">
+					<view class="visitor_name">
+						<text class="name_text">{{item.visitorName}}</text>
+						<text class="status_text">{{item.visitStatus=='0'?'待审核':''}}</text>
+					</view>
+					<text class="phone_date">手机号码：{{item.visitorPhone}}</text>
+					<text class="phone_date">访问时间：{{item.visitTime}}</text>
+				</view>
+				<view class="move" data-id="{{index}}" catchtap="onDeleteItem">
+					<view class="bg-red">删除</view>
+				</view>
+			</view>
+		</view>
+	</l-loadmore>
+</view>
+<view class="add_right" bindtap="onAddVisitor">
+	<image class="add_img" src="/images/common/icon_add.png"></image>
+</view>

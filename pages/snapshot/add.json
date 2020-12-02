@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-upload": "../../components/uploadImage/index"
+  },
+  "navigationBarTitleText": "添加物业报修"
+}

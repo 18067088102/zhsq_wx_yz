@@ -1,0 +1,184 @@
+/* pages/login/index.wxss */
+
+.login_container {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: relative;
+}
+
+.login_head {
+  display: flex;
+  margin-left: 41rpx;
+  margin-top: 39rpx;
+  align-items: center;
+}
+
+.login_head .login_type {
+  font-size: 48rpx;
+  color: #B2BAB9;
+  line-height: 70rpx;
+  letter-spacing: 1rpx;
+}
+
+.login_head .middle_line {
+  width: 2rpx;
+  height: 22rpx;
+  background: #979797;
+  margin: 0 22rpx;
+}
+
+.login_head .active {
+  color: #2A2F2E;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 32rpx;
+  margin-top: 75rpx;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.input-text {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(121, 121, 121, 1);
+  line-height: 48rpx;
+  margin-right: 70rpx;
+}
+
+.login-input {
+  width: 330rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(47, 45, 44, 1);
+  line-height: 48rpx;
+}
+
+.placeholder1 {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(186, 186, 186, 1);
+  line-height: 48rpx;
+}
+
+.input-line {
+  margin: 28rpx 0;
+  height: 2rpx;
+  background-color: #eee;
+}
+
+.seePsw-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 0;
+}
+
+.seePsw-img {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.vscode-text {
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #218EFF;
+  position: absolute;
+  right: 0;
+}
+
+.submit-btn {
+  margin-top: 124rpx;
+}
+
+.tips {
+  display: flex;
+  justify-content: center;
+  margin-top: 56rpx;
+  align-items: center;
+}
+
+.tips .com {
+  font-size: 30rpx;
+  color: #BABEC1;
+}
+
+.blueColor {
+  color: #218EFF;
+}
+
+.tips .line {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 2rpx;
+  background: #979797;
+  height: 22rpx;
+  margin: 0 31rpx;
+}
+
+.third_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 279rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.third_head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.head_line {
+  width: 160rpx;
+  height: 2rpx;
+  background: #EEEEEE;
+}
+
+.head_text {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 37rpx;
+  margin: 0 20rpx;
+}
+
+.wx_login {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #63656B;
+  line-height: 26rpx;
+}
+
+.wx_img {
+  width: 101rpx;
+  height: 100rpx;
+  margin-bottom: 16rpx;
+}

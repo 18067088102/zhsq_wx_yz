@@ -1,0 +1,66 @@
+/* pages/communityRegister/validation.wxss */
+
+.community_container {
+  width: 100%;
+  height: 100%;
+  background: #F6F8FA;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100rpx;
+  background: #fff;
+}
+
+.account-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 32rpx;
+  position: relative;
+}
+
+.input-text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(121, 121, 121, 1);
+  line-height: 48rpx;
+  margin-right: 70rpx;
+}
+
+.login-input {
+  width: 330rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(47, 45, 44, 1);
+  line-height: 48rpx;
+}
+
+.placeholder1 {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(186, 186, 186, 1);
+  line-height: 48rpx;
+}
+
+.vscode-text {
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #218EFF;
+  position: absolute;
+  right: 32rpx;
+}
+
+.submit-btn {
+  margin-top: 100rpx;
+}

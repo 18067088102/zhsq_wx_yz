@@ -1,0 +1,28 @@
+<!--pages/resident/detail.wxml-->
+
+<view class="detail-list">
+  <view class="list-item solid-bottom" style="min-height: 162rpx;">
+    <text class="title-text">人员照片</text>
+    <image class="photo_img" src="{{imgPath?imgPath:'/images/mine/icon_avator.png'}}" bindtap="onPreviewTap"></image>
+  </view>
+  <view class="list-item solid-bottom">
+    <text class="title-text">姓名</text>
+    <text class="detail-text">{{dataDic.name}}</text>
+  </view>
+  <view class="list-item solid-bottom">
+    <text class="title-text">手机号</text>
+    <text class="detail-text">{{dataDic.mobile}}</text>
+  </view>
+  <view class="list-item solid-bottom">
+    <text class="title-text">证件类型</text>
+    <text class="detail-text">{{dataDic.idCardTypeName?dataDic.idCardTypeName:'无'}}</text>
+  </view>
+  <view class="list-item solid-bottom">
+    <text class="title-text">证件号</text>
+    <text class="detail-text">{{dataDic.idCardNumber}}</text>
+  </view>
+  <view class="list-item solid-bottom">
+    <text class="title-text">与户主关系</text>
+    <text class="detail-text">{{dataDic.relationName?dataDic.relationName:'无'}}</text>
+  </view>
+</view>
