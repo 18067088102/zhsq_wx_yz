@@ -1,17 +1,17 @@
-//生产
-// let BASE_URL = 'https://live.cncqs.cn:8443/mpp/api/v1';
-// let HOST_SERVER = BASE_URL + '/auth';
-// let HOST_SERVER2 = BASE_URL + '/archives';
-// let HOST_SERVER3 = BASE_URL + '/notification';
-// let HOST_SERVER4 = BASE_URL + '/estate';
+// 生产
+let BASE_URL = 'https://live.cncqs.cn:8443/mpp/api/v1';
+let HOST_SERVER = BASE_URL + '/auth';
+let HOST_SERVER2 = BASE_URL + '/archives';
+let HOST_SERVER3 = BASE_URL + '/notification';
+let HOST_SERVER4 = BASE_URL + '/estate';
 
-//本地测试
-let HOST_SERVER = 'http://192.168.1.170:7000';
-let HOST_SERVER2 = 'http://192.168.1.170:7100';
-let HOST_SERVER3 = 'http://192.168.1.170:7200';
-let HOST_SERVER4 = 'http://192.168.1.170:7300';
+// 本地测试
+// let HOST_SERVER = 'http://192.168.1.170:7000';
+// let HOST_SERVER2 = 'http://192.168.1.170:7100';
+// let HOST_SERVER3 = 'http://192.168.1.170:7200';
+// let HOST_SERVER4 = 'http://192.168.1.170:7300';
 
-let api = {  //共51个接口
+let api = {  //共52个接口
   //共用 5
   getVillageListUrl: HOST_SERVER2 + '/village/page', //查询小区列表分页接口
   viewImgaeUrl: HOST_SERVER2 + '/img/view', //拼接图片完整地址
@@ -19,7 +19,7 @@ let api = {  //共51个接口
   uploadImageUrl: HOST_SERVER2 + '/img/upload', //上传图片  
   noTokenUploadImageUrl: HOST_SERVER2 + '/img/noOauthCUpload', //没有token时上传图片
 
-  //账号管理模块 7
+  //账号管理模块 8
   registerUrl: HOST_SERVER + "/doCreateTenantAccount", //创建小程序用户账户
   loginUrl: HOST_SERVER + '/login', //登录接口  
   wxLoginUrl: HOST_SERVER + '/wechat/owner', //微信登录接口
