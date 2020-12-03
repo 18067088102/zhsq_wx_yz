@@ -113,7 +113,7 @@ Page({
     return request(api.getAuthSMSCodeUrl + "?phone=" + this.data.newPhoneNo, {
       method: 'POST',
       data: {},
-      token: ''
+      token: wx.getStorageSync('token')
     }).then(res => {
       that.handleRequestResult(res)
     }).catch(err => {})
@@ -127,7 +127,7 @@ Page({
         icon: "none"
       })
       var _this = this
-      var coden = 180 //定义60秒的倒计时
+      var coden = 60 //定义60秒的倒计时
       var codeV = setInterval(function () {
         _this.setData({ //_this这里的作用域不同了
           getCodeText: (--coden) + 's' + '后重试',

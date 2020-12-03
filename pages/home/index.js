@@ -148,6 +148,7 @@ Page({
       data: {
         limit: '5',
         page: '1',
+        status: '1',
         villageId: wx.getStorageSync('villageId')
       },
       token: wx.getStorageSync('token')

@@ -37,9 +37,25 @@ Page({
   onShow: function (options) {
     this.setData({
       villageName: wx.getStorageSync('villageName'),
-      villageId: wx.getStorageSync('villageId')
+      villageId: wx.getStorageSync('villageId'),
+      buildingName: '',
+      buildingId: '',
+      buildingIdArr: [],
+      index2: null,
+      picker2: [],
+      roomName: '',
+      roomId: '',
+      roomIdArr: [],
+      index3: null,
+      picker3: []
     })
     this.getBuildingListRequest()
+  },
+
+  onSelectVillage() {
+    wx.navigateTo({
+      url: '/pages/communitySelect/index?fromID=2'
+    })
   },
 
   buildingChange(e) {
@@ -105,12 +121,6 @@ Page({
     }).catch(err => {})
   },
 
-  onSelectVillage() {
-    wx.navigateTo({
-      url: '/pages/communitySelect/index?fromID=2'
-    })
-  },
-
   onGetCode() {
     if (this.data.phoneNo == '') {
       wx.showToast({
@@ -153,7 +163,7 @@ Page({
         icon: "none"
       })
       var _this = this
-      var coden = 180 //定义60秒的倒计时
+      var coden = 60 //定义60秒的倒计时
       var codeV = setInterval(function () {
         _this.setData({ //_this这里的作用域不同了
           getCodeText: (--coden) + 's' + '后重试',
@@ -187,7 +197,7 @@ Page({
       this.setData({
         illegalPhoneNum: true
       })
-    }else{
+    } else {
       this.setData({
         illegalPhoneNum: false
       })
@@ -219,19 +229,19 @@ Page({
     }
   },
   submitHandler() {
-    if(this.data.villageId == ''||this.data.buildingId == ''||this.data.roomId == '') {
+    if (this.data.villageId == '' || this.data.buildingId == '' || this.data.roomId == '') {
       wx.showToast({
         title: '请完善房屋信息',
         icon: 'none'
       })
       return
-    }else if(this.data.illegalPhoneNum) {
+    } else if (this.data.illegalPhoneNum) {
       wx.showToast({
         title: '请输入正确的手机号',
         icon: 'none'
       })
       return
-    }else{
+    } else {
       this.setData({
         isLoading: true,
         buttonText: '验证中...',

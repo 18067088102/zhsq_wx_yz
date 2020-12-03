@@ -8,7 +8,7 @@
 			<text class="name_text">{{villageName}}</text>
 			<image class="right_arrow" src="/images/common/icon_right.png"></image>
 		</view>
-		<text class="room_text" wx:if="{{isLogin&&buildNum}}">{{buildNum}}栋{{roomNum}}室</text>
+		<text class="room_text" wx:if="{{isLogin&&isAuth}}">{{buildNum}}栋{{roomNum}}室</text>
 	</view>
 	<view class="banner">
 		<swiper indicator-dots="{{indicatorDots}}" current="{{index}}" autoplay="{{autoplay}}" interval="{{interval}}"
@@ -58,13 +58,17 @@
 		<view class="empty-page" style="margin-top: 70rpx;" wx:if="{{isNoData}}">
 			<v-empty nullTitle="暂无小区风采…" />
 		</view>
-		<view class="noticeItem {{index+1<elegantsArr.length?'solid-bottom':''}}" wx:for="{{elegantsArr}}" wx:key="k" bindtap="onElegantDetail" data-index="{{index}}" wx:if="{{!isNoData}}">
-			<view class="notice_name">
+		<view class="noticeItem {{index+1<elegantsArr.length?'solid-bottom':''}}" wx:for="{{elegantsArr}}" wx:key="k"
+			bindtap="onElegantDetail" data-index="{{index}}" wx:if="{{!isNoData}}">
+			<view class="notice_name" style="margin-bottom: 15rpx;">
 				<text class="name_text">{{item.title}}</text>
-				<text class="date_text">{{item.updateTime}}</text>
 			</view>
-			<view class="content">
-				<text decode="{{true}}">{{filter.replaceHtml(item.content)}}</text>
+			<view class="notice_name">
+				<text class="date_text">{{item.updateTime}}</text>
+				<view class="see_box">
+					<image class="see_img" src="/images/common/see.png"></image>
+					<text class="date_text">{{item.clickNumber}}</text>
+				</view>
 			</view>
 		</view>
 	</view>
