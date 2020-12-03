@@ -12,11 +12,6 @@
   display: flex;
   flex-direction: column;
   padding: 30rpx 0rpx;
-  border-bottom: 1rpx solid #EEEEEE;
-}
-
-.noticeItem:last-child {
-  border-bottom: none;
 }
 
 .notice_name {

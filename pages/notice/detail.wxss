@@ -2,13 +2,6 @@
 
 @import "../../utils/wxParse/wxParse.wxss";
 
-.main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  background: red;
-}
-
 .content {
   display: flex;
   flex-direction: column;

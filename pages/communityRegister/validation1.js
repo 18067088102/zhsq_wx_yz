@@ -23,7 +23,7 @@ Page({
     registerCodeArr: [],
     index2: 0,
     picker2: ['常住', '暂住', '出租'],
-    index3: 0,
+    index3: null,
     picker3: [],
     relationCodeArr: [],
     index4: 0,

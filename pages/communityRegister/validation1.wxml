@@ -81,7 +81,7 @@
 			{{imgList.length}}/1
 		</view>
 	</view>
-	<v-upload imgList="{{imgList}}" pictures="{{imgList}}" bind:getPictures="onGetPictures"
+	<v-upload maxLength="1" imgList="{{imgList}}" pictures="{{imgList}}" bind:getPictures="onGetPictures"
 		bind:deletePicture="onDeletePicture" />
 	<view class="tip_view">
 		<text class="tip_text">注：请拍照或上传本人清晰头像，以确保刷脸开门的通过率</text>

@@ -1,15 +1,14 @@
 <!--pages/notice/detail.wxml-->
 
 <import src="../../utils/wxParse/wxParse.wxml" />
-<!-- <view class="main"> -->
-	<scroll-view scroll-y="true" style="min-height: 100%;">
-		<view class="content">
-			<view class="title">{{info.title}}</view>
-			<view class="ql-container" style="padding:0 30rpx;">
-				<view class="wxParse ql-editor">
-					<template is="wxParse" data="{{wxParseData:article_content.nodes}}" />
-				</view>
+
+<scroll-view scroll-y="true" style="min-height: 100%;">
+	<view class="content">
+		<view class="title">{{info.title}}</view>
+		<view class="ql-container" style="padding:0 30rpx;">
+			<view class="wxParse ql-editor">
+				<template is="wxParse" data="{{wxParseData:article_content.nodes}}" />
 			</view>
 		</view>
-	</scroll-view>
-<!-- </view> -->
+	</view>
+</scroll-view>

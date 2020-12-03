@@ -1,8 +1,6 @@
 {
   "pages": [
     "pages/communitySelect/index",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/home/index",
     "pages/commonPhone/index",
     "pages/mine/index",

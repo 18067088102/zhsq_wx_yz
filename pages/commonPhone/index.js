@@ -34,7 +34,7 @@ Page({
     var token = wx.getStorageSync('token')
     if (token) {
       this.getUserInfoRequest()
-    }else{
+    } else {
       this.setData({
         isLogin: false,
         isAuth: false
@@ -145,6 +145,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    if (!this.data.isLogin || !this.data.isAuth) {
+      wx.stopPullDownRefresh()
+      return
+    }
     wx.showNavigationBarLoading();
     if (!this.loading) {
       this.getCommonPhoneListRequest(1, true).then(() => {

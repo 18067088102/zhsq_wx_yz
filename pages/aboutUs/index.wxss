@@ -38,10 +38,6 @@
   height: 106rpx;
 }
 
-.about_list_item:first-child {
-  border-bottom: 1rpx solid #eee;
-}
-
 .title_text {
   font-size: 30rpx;
   font-family: PingFangSC-Regular, PingFang SC;

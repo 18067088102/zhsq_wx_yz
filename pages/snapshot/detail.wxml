@@ -2,7 +2,7 @@
 
 <view class="detail_container">
 	<view class="snap_info">
-		<view class="info_head">
+		<view class="info_head solid-bottom">
 			<text class="info_text">报修信息</text>
 		</view>
 		<view class="info_content">
@@ -30,7 +30,7 @@
 	</view>
 	<view class="line-view"></view>
 	<view class="snap_info">
-		<view class="info_head">
+		<view class="info_head solid-bottom">
 			<text class="info_text">处理情况</text>
 		</view>
 		<view class="info_content">

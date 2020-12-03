@@ -21,7 +21,7 @@
 	<view class="cu-form-group">
 		<textarea maxlength="-1" value="{{textArea}}" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入你的问题..." placeholder-class='placeholder'></textarea>
 	</view>
-	<v-upload class="upload_view" imgList="{{imgList}}" pictures="{{imgList}}" bind:getPictures="onGetPictures" bind:deletePicture="onDeletePicture" />
+	<v-upload maxLength="8" class="upload_view" imgList="{{imgList}}" pictures="{{imgList}}" bind:getPictures="onGetPictures" bind:deletePicture="onDeletePicture" />
 	<view class="btn-view">
 		<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
 	</view>

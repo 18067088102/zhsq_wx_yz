@@ -2,7 +2,7 @@
 let BASE_URL = 'https://live.cncqs.cn:8443/mpp/api/v1';
 let HOST_SERVER = BASE_URL + '/auth';
 let HOST_SERVER2 = BASE_URL + '/archives';
-let HOST_SERVER3 = BASE_URL + '/notification';
+let HOST_SERVER3 = BASE_URL + '/notification'; 
 let HOST_SERVER4 = BASE_URL + '/estate';
 
 // 本地测试

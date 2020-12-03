@@ -5,7 +5,7 @@
   <text class="head_text">智慧社区</text>
 </view>
 <view class="about_list">
-  <view class="about_list_item" wx:for="{{listItem}}" wx:key="k" bindtap="onSelectItem" data-index="{{index}}">
+  <view class="about_list_item {{index==0?'solid-bottom':''}}" wx:for="{{listItem}}" wx:key="k" bindtap="onSelectItem" data-index="{{index}}">
     <text class="title_text">{{item.title_text}}</text>
     <text class="detail_text">{{item.detail_text}}</text>
   </view>

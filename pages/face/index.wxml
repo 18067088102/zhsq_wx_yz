@@ -7,7 +7,7 @@
 </view>
 <view class="line-view"></view>
 <view class="about_list">
-	<view class="about_list_item" bindtap="onChangePhoto">
+	<view class="about_list_item solid-bottom" bindtap="onChangePhoto">
 		<text class="title_text">更换照片</text>
 		<image class="right_img" src="/images/mine/icon_mine_right.png"></image>
 	</view>

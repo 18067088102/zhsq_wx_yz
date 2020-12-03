@@ -18,7 +18,7 @@
 		<view class="account-container">
 			<view class="account-input">
 				<text class="input-text">密码</text>
-				<input class='login-input' value="{{password}}" bindinput="getValue" bindblur="pswBlur" data-id="password" type='default'
+				<input class='login-input' value="{{password}}" bindinput="getValue" data-id="password" type='default'
 					maxlength='20' placeholder="请输入密码" placeholder-class='placeholder1' password='{{!seePsw}}'></input>
 				<view class="seePsw-view" bindtap="onSeePsw">
 					<image class="seePsw-img" src="{{seePsw?'/images/common/notsee.png':'/images/common/see.png'}}"></image>
@@ -54,7 +54,7 @@
 		<text class="line"></text>
 		<text class="com" bindtap="toForget">忘记密码</text>
 	</view>
-	<view class="third_login">
+	<view class="third_login" wx:if="{{false}}">
 		<view class="third_head">
 			<view class="head_line"></view>
 			<text class="head_text">其他登录方式</text>

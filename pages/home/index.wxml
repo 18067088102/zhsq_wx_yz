@@ -58,7 +58,7 @@
 		<view class="empty-page" style="margin-top: 70rpx;" wx:if="{{isNoData}}">
 			<v-empty nullTitle="暂无小区风采…" />
 		</view>
-		<view class="noticeItem" wx:for="{{elegantsArr}}" wx:key="k" bindtap="onElegantDetail" data-index="{{index}}" wx:if="{{!isNoData}}">
+		<view class="noticeItem {{index+1<elegantsArr.length?'solid-bottom':''}}" wx:for="{{elegantsArr}}" wx:key="k" bindtap="onElegantDetail" data-index="{{index}}" wx:if="{{!isNoData}}">
 			<view class="notice_name">
 				<text class="name_text">{{item.title}}</text>
 				<text class="date_text">{{item.updateTime}}</text>

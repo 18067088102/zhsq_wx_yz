@@ -28,7 +28,7 @@ Page({
    */
   onShow: function () {
     const villageName = wx.getStorageSync('villageName')
-    console.log(villageName)
+    // console.log(villageName)
     if (this.data.fromID == 0) {
       if (villageName) {
         wx.switchTab({

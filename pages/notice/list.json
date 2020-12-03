@@ -4,5 +4,5 @@
     "v-empty": "../../components/emptyPage/index"
   },
   "enablePullDownRefresh": true,
-  "navigationBarTitleText": "公告列表"
+  "navigationBarTitleText": "小区风采列表"
 }

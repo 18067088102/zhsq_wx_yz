@@ -47,7 +47,7 @@ Component({
     ChooseImage() { //选择图片进行上传
       wx.chooseImage({
         count: 1, //一次最多可以选择图片的张数
-        sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+        sizeType: ['original'], //可以指定是原图还是压缩图，默认二者都有
         sourceType: ['album', 'camera'], //图片的来源（相册或者拍照）
         success: (res) => {
           this.onUploadImage(res.tempFilePaths[0]) //向服务器上传图片
@@ -135,12 +135,11 @@ Component({
     //编辑时删除图片的操作
     DelImg(e) {
       wx.showModal({ //先进行弹框提示，用户点确认后再进行删除操作
-        title: '温馨提示',
         content: '确定要删除该图片吗？',
         cancelText: '再想想',
         cancelColor: '#797979',
         confirmText: '删除',
-        confirmColor: '#FB7F23',
+        confirmColor: '#218EFF',
         success: res => {
           if (res.confirm) { //删除本地展示图片及后台返回的已上传图片的地址
             this.properties.imgList.splice(e.currentTarget.dataset.index, 1);

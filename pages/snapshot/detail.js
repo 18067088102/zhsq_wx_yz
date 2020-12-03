@@ -41,10 +41,10 @@ Page({
   // 预览 preview
   onPreviewTap(e) {
     const index = e.currentTarget.dataset.index
-    const tempFilePath = this.data.pic1[index]
+    const tempFilePath = this.data.repiarsArr[index]
     wx.previewImage({
       current: tempFilePath, // 当前显示图片的http链接
-      urls: this.data.pic1 // 需要预览的图片http链接列表
+      urls: this.data.repiarsArr // 需要预览的图片http链接列表
     })
   },
 

@@ -22,9 +22,9 @@
 			<text class="action1">上传图片</text>
 		</view>
 		<view class="action">
-			{{imgList.length}}/6
+			{{imgList.length}}/8
 		</view>
 	</view>
-	<v-upload maxLength="6" imgList="{{imgList}}" bind:getPictures="onGetPictures" bind:deletePicture="onDeletePicture" />
+	<v-upload maxLength="8" imgList="{{imgList}}" bind:getPictures="onGetPictures" bind:deletePicture="onDeletePicture" />
 	<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
 </view>

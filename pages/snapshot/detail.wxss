@@ -19,7 +19,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 20rpx 0 15rpx;
-  border-bottom: 1rpx solid #EEEEEE;
 }
 
 .info_text {
