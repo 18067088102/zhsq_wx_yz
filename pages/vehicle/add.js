@@ -15,11 +15,18 @@ Page({
     vehicleNum: '',
     ownerName: '',
     ownerPhone: '',
-    carCardColor: '',
-    carColor: '',
-    carBrandName: '',
     index1: null,
     picker1: [],
+    CLLXCodeArr: [],
+    index2: null,
+    picker2: [],
+    CPYSCodeArr: [],
+    index3: null,
+    picker3: [],
+    CSYSCodeArr: [],
+    index4: null,
+    picker4: [],
+    CLPPCodeArr: [],
     illegalPhoneNum: false,
   },
 
@@ -28,6 +35,33 @@ Page({
    */
   onLoad: function (options) {
     this.getDictionaryListRequest("CLLX")
+    this.getDictionaryListRequest("CPYS")
+    this.getDictionaryListRequest("CLYS")
+    this.getDictionaryListRequest("CLPP")
+  },
+
+  TypeChange(e) {
+    this.setData({
+      index1: e.detail.value
+    })
+  },
+
+  CPYSChange(e) {
+    this.setData({
+      index2: e.detail.value
+    })
+  },
+
+  CSYSChange(e) {
+    this.setData({
+      index3: e.detail.value
+    })
+  },
+
+  CLPPChange(e) {
+    this.setData({
+      index4: e.detail.value
+    })
   },
 
   getDictionaryListRequest(code) {
@@ -39,12 +73,32 @@ Page({
     }).then(res => {
       if (res.code == 200) {
         var nameArr = []
+        var codeArr = []
         for (let i = 0; i < res.data.length; i++) {
           nameArr.push(res.data[i].zdz)
+          codeArr.push(res.data[i].zdx)
         }
-        that.setData({
-          picker1: nameArr
-        })
+        if (code == 'CLLX') {
+          that.setData({
+            picker1: nameArr,
+            CLLXCodeArr: codeArr
+          })
+        } else if (code == 'CPYS') {
+          that.setData({
+            picker2: nameArr,
+            CPYSCodeArr: codeArr
+          })
+        } else if (code == 'CLYS') {
+          that.setData({
+            picker3: nameArr,
+            CSYSCodeArr: codeArr
+          })
+        } else if (code == 'CLPP') {
+          that.setData({
+            picker4: nameArr,
+            CLPPCodeArr: codeArr
+          })
+        }
       }
     }).catch(err => {})
   },
@@ -82,10 +136,14 @@ Page({
         ownerPhone: that.data.ownerPhone,
         hasParking: '0',
         cardNumber: that.data.vehicleNum,
+        carTypeCode: that.data.CLLXCodeArr[that.data.index1],
         carTypeName: that.data.picker1[that.data.index1],
-        carColorName: that.data.carColor,
-        cardColorName: that.data.carCardColor,
-        carBrandName: that.data.carBrandName
+        carColorCode: that.data.CSYSCodeArr[that.data.index2],
+        carColorName: that.data.picker2[that.data.index2],
+        cardColorCode: that.data.CPYSCodeArr[that.data.index3],
+        cardColorName: that.data.picker3[that.data.index3],
+        carBrandCode: that.data.CLPPCodeArr[that.data.index4],
+        carBrandName: that.data.picker4[that.data.index4],
       },
       token: wx.getStorageSync('token')
     }).then(res => {
@@ -161,42 +219,6 @@ Page({
         illegalPhoneNum: false
       })
     }
-  },
-
-  TypeChange(e) {
-    this.setData({
-      index1: e.detail.value
-    })
-  },
-
-  carCardColorInput(event) {
-    let carCardColor = event.detail.value || event.detail.text;
-    if (!carCardColor) {
-      carCardColor = ''
-    }
-    this.setData({
-      carCardColor: carCardColor.replace(/\s+/g, '')
-    })
-  },
-
-  carColorInput(event) {
-    let carColor = event.detail.value || event.detail.text;
-    if (!carColor) {
-      carColor = ''
-    }
-    this.setData({
-      carColor: carColor.replace(/\s+/g, '')
-    })
-  },
-
-  carBrandNameInput(event) {
-    let carBrandName = event.detail.value || event.detail.text;
-    if (!carBrandName) {
-      carBrandName = ''
-    }
-    this.setData({
-      carBrandName: carBrandName.replace(/\s+/g, '')
-    })
   },
 
   onVehicleNum() {

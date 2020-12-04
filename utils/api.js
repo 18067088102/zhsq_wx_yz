@@ -1,15 +1,15 @@
 // 生产
-let BASE_URL = 'https://live.cncqs.cn:8443/mpp/api/v1';
-let HOST_SERVER = BASE_URL + '/auth';
-let HOST_SERVER2 = BASE_URL + '/archives';
-let HOST_SERVER3 = BASE_URL + '/notification'; 
-let HOST_SERVER4 = BASE_URL + '/estate';
+// let BASE_URL = 'https://live.cncqs.cn:8443/mpp/api/v1';
+// let HOST_SERVER = BASE_URL + '/auth';
+// let HOST_SERVER2 = BASE_URL + '/archives';
+// let HOST_SERVER3 = BASE_URL + '/notification'; 
+// let HOST_SERVER4 = BASE_URL + '/estate';
 
 // 本地测试
-// let HOST_SERVER = 'http://192.168.1.170:7000';
-// let HOST_SERVER2 = 'http://192.168.1.170:7100';
-// let HOST_SERVER3 = 'http://192.168.1.170:7200';
-// let HOST_SERVER4 = 'http://192.168.1.170:7300';
+let HOST_SERVER = 'http://192.168.1.170:7000';
+let HOST_SERVER2 = 'http://192.168.1.170:7100';
+let HOST_SERVER3 = 'http://192.168.1.170:7200';
+let HOST_SERVER4 = 'http://192.168.1.170:7300';
 
 let api = {  //共52个接口
   //共用 5

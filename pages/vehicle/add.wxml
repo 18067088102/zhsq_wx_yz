@@ -37,15 +37,27 @@
 	</view>
 	<view class="cu-form-group solid-bottom">
 		<view class="title">车牌颜色</view>
-		<input value="{{carCardColor}}" bindinput="carCardColorInput" placeholder="请输入" placeholder-class='placeholder' maxlength="10"></input>
+		<picker bindchange="CPYSChange" value="{{index2}}" range="{{picker2}}">
+			<view class="picker {{index2!=null?'color2':'color1'}}">
+				{{index2!=null?picker2[index2]:'请选择'}}
+			</view>
+		</picker>
 	</view>
 	<view class="cu-form-group solid-bottom">
 		<view class="title">车身颜色</view>
-		<input value="{{carColor}}" bindinput="carColorInput" placeholder="请输入" placeholder-class='placeholder' maxlength="10"></input>
+		<picker bindchange="CSYSChange" value="{{index3}}" range="{{picker3}}">
+			<view class="picker {{index3!=null?'color2':'color1'}}">
+				{{index3!=null?picker3[index3]:'请选择'}}
+			</view>
+		</picker>
 	</view>
 	<view class="cu-form-group solid-bottom">
 		<view class="title">车辆品牌</view>
-		<input value="{{carBrandName}}" bindinput="carBrandNameInput" placeholder="请输入" placeholder-class='placeholder' maxlength="10"></input>
+		<picker bindchange="CLPPChange" value="{{index4}}" range="{{picker4}}">
+			<view class="picker {{index4!=null?'color2':'color1'}}">
+				{{index4!=null?picker4[index4]:'请选择'}}
+			</view>
+		</picker>
 	</view>
 	<view class="btn-view">
 		<button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler" disabled="{{isDisable}}">{{buttonText}}</button>
