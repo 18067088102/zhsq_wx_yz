@@ -136,6 +136,11 @@ Page({
             bannerList1: imgs,
             bannerData
           })
+        }else{
+          that.setData({
+            bannerList1: [],
+            bannerData: []
+          })
         }
       }
     }).catch(err => {})

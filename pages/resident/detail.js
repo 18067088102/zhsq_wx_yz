@@ -23,12 +23,9 @@ Page({
 
   getPersonDetailRequest(personId) {
     var that = this
-    return request(api.getPersonDetailUrl, {
+    return request(api.getPersonDetailUrl + '/' + personId, {
       method: 'GET',
-      data: {
-        personId,
-        roomId: wx.getStorageSync('data').roomId
-      },
+      data: {},
       token: wx.getStorageSync('token')
     }).then(res => {
       if(res.code == 200) {

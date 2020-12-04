@@ -82,8 +82,8 @@ let api = {  //共52个接口
   deleteVehicleUrl: HOST_SERVER2 + '/car/delete', //删除车辆信息接口
 
   //住户管理模块 4
-  getPersonListUrl: HOST_SERVER2 + '/person/list', //查询住户列表接口
-  getPersonDetailUrl: HOST_SERVER2 + '/person/info', //查询住户信息接口
+  getPersonListUrl: HOST_SERVER2 + '/authenticate/list', //查询住户列表接口
+  getPersonDetailUrl: HOST_SERVER2 + '/authenticate/info', //查询住户信息接口
   deletePersonRecordUrl: HOST_SERVER2 + '/person/delete', //删除住户信息接口  
   addPersonRecordUrl: HOST_SERVER2 + '/person/save', //新增住户信息接口 
 

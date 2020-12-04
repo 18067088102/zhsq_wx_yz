@@ -88,7 +88,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 12rpx 27rpx;
+  padding: 12rpx 20rpx;
   background: #218EFF;
   border-radius: 24rpx 0rpx 0rpx 24rpx;
   font-size: 24rpx;

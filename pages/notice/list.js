@@ -21,7 +21,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function (options) {
     this.getElegantListRequest(1, true)
   },
 
@@ -36,6 +36,7 @@ Page({
       data: {
         limit: '10',
         page: pageNo,
+        status: '1',
         villageId: wx.getStorageSync('villageId')
       },
       token: wx.getStorageSync('token')

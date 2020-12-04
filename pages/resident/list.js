@@ -43,10 +43,10 @@ Page({
         for (let i = 0; i < list.length; i++) {
           const relation = list[i].relationName
           var imgPath = common.combineImageUrl(list[i].faceImg)
-          if(relation == '租客') {
+          if (relation == '租客') {
             retents.push(list[i])
             retentsFaces.push(imgPath)
-          }else{
+          } else {
             residents.push(list[i])
             residentsFaces.push(imgPath)
           }
@@ -57,7 +57,7 @@ Page({
           residentsArr: residents,
           retentsArr: retents
         })
-      }else{
+      } else {
         wx.showToast({
           title: res.msg,
           icon: 'none'
@@ -131,7 +131,7 @@ Page({
       data: personIds,
       token: wx.getStorageSync('token')
     }).then(res => {
-      if(res.code == 200) {
+      if (res.code == 200) {
         wx.showToast({
           title: '删除成功',
           icon: 'none',
@@ -139,7 +139,7 @@ Page({
             that.getPersonListRequest()
           }
         })
-      }else{
+      } else {
         wx.showToast({
           title: '删除失败',
           icon: 'none'
@@ -175,6 +175,18 @@ Page({
     }
     this.setData({
       ListTouchDirection: null
+    })
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading();
+    this.getPersonListRequest().then(() => {
+      wx.hideNavigationBarLoading()
+      // 处理完成后，终止下拉刷新
+      wx.stopPullDownRefresh()
     })
   },
 })

@@ -29,6 +29,8 @@ Page({
     index4: 0,
     picker4: [],
     cradCodeArr: [],
+    villageName: '',
+    villageId: '',
     buildingName: '',
     buildingId: '',
     roomName: '',
@@ -52,8 +54,10 @@ Page({
       wx.setNavigationBarTitle({
         title: '新增住户'
       })
-    }else{
+    } else {
       this.setData({
+        villageName: options.villageName,
+        villageId: options.villageId,
         buildingName: options.buildingName,
         buildingId: options.buildingId,
         roomName: options.roomName,
@@ -166,7 +170,7 @@ Page({
   phoneNumInput(event) {
     let phoneNum = event.detail.value || event.detail.text;
     if (!phoneNum) {
-      idCaphoneNumrdNum = ''
+      phoneNum = ''
     }
     this.setData({
       phoneNum: phoneNum.replace(/\s+/g, '')
@@ -261,8 +265,8 @@ Page({
         roomId: that.data.roomId,
         roomName: that.data.roomName,
         sex: that.data.sex,
-        villageId: wx.getStorageSync('villageId'),
-        villageName: wx.getStorageSync('villageName')
+        villageId: that.data.villageId,
+        villageName: that.data.villageName
       } : {
         roomId: wx.getStorageSync('data').roomId,
         liveType: '1',

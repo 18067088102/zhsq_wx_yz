@@ -15,7 +15,7 @@
 			<view class="info_top">
 				<text class="name_text">{{item.villageName}}</text>
 				<view class="house_type">
-					<text class="type_text">{{item.relationName}}</text>
+					<text>{{item.relationName}}</text>
 				</view>
 			</view>
 			<text class="detail_text">{{item.buildingName}}栋{{item.roomName}}室</text>

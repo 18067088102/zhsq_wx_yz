@@ -102,13 +102,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 102rpx;
-  height: 48rpx;
+  padding: 12rpx 20rpx;
   background: #218EFF;
   border-radius: 24rpx 0rpx 0rpx 24rpx;
-}
-
-.type_text {
   font-size: 24rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;

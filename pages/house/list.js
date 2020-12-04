@@ -124,5 +124,17 @@ Page({
     wx.navigateTo({
       url: '/pages/communityRegister/validation',
     })
-  }
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading();
+    this.getRoomList().then(() => {
+      wx.hideNavigationBarLoading()
+      // 处理完成后，终止下拉刷新
+      wx.stopPullDownRefresh()
+    })
+  },
 })

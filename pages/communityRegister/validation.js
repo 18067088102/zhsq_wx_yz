@@ -34,27 +34,17 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onShow: function (options) {
+  onLoad: function (options) {
     this.setData({
       villageName: wx.getStorageSync('villageName'),
-      villageId: wx.getStorageSync('villageId'),
-      buildingName: '',
-      buildingId: '',
-      buildingIdArr: [],
-      index2: null,
-      picker2: [],
-      roomName: '',
-      roomId: '',
-      roomIdArr: [],
-      index3: null,
-      picker3: []
+      villageId: wx.getStorageSync('villageId')
     })
     this.getBuildingListRequest()
   },
 
   onSelectVillage() {
     wx.navigateTo({
-      url: '/pages/communitySelect/index?fromID=2'
+      url: '/pages/communitySelect/index?fromID=1'
     })
   },
 
@@ -274,7 +264,7 @@ Page({
           icon: "none",
           success: (res) => {
             wx.navigateTo({
-              url: `/pages/communityRegister/validation1?&buildingName=${that.data.picker2[that.data.index2]}&buildingId=${that.data.buildingId}&roomName=${that.data.picker3[that.data.index3]}&roomId=${that.data.roomId}`,
+              url: `/pages/communityRegister/validation1?&villageName=${that.data.villageName}&villageId=${that.data.villageId}&buildingName=${that.data.picker2[that.data.index2]}&buildingId=${that.data.buildingId}&roomName=${that.data.picker3[that.data.index3]}&roomId=${that.data.roomId}`,
             })
           }
         })

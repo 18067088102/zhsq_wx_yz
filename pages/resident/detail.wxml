@@ -15,7 +15,7 @@
   </view>
   <view class="list-item solid-bottom">
     <text class="title-text">证件类型</text>
-    <text class="detail-text">{{dataDic.idCardTypeName?dataDic.idCardTypeName:'无'}}</text>
+    <text class="detail-text">{{dataDic.idCardType?dataDic.idCardType:'无'}}</text>
   </view>
   <view class="list-item solid-bottom">
     <text class="title-text">证件号</text>

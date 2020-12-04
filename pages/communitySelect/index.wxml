@@ -14,10 +14,9 @@
 			<view class="community_info">
 				<view class="name_distance">
 					<text class="name_text">{{item.name}}</text>
-					<text class="distance_text" wx:if="{{fromID!=1}}">{{util.formatDistance(item.distance)}}km</text>
+					<text class="distance_text" wx:if="{{fromID==0}}">{{util.formatDistance(item.distance)}}km</text>
 				</view>
-				<text class="address_text" wx:if="{{fromID!=1}}">{{item.address}}</text>
-				<text class="address_text" wx:if="{{fromID==1}}">{{item.villageName}}{{item.buildingName}}栋{{item.roomName}}室</text>
+				<text class="address_text">{{item.address}}</text>
 			</view>
 		</view>
 	</l-loadmore>

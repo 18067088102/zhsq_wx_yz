@@ -20,7 +20,7 @@ Page({
     lat: '',
     lng: '',
     isNoData: false,
-    fromID: 0 //0: 刚启动时社区选择；2:首页头部切换房产(未认证)；
+    fromID: 0 //0: 刚启动时社区选择；1:社区选择时切换小区；2:首页头部切换房产(未认证)；
   },
 
   /**
@@ -59,13 +59,36 @@ Page({
 
   onSelect(e) {
     const idx = e.currentTarget.dataset.index
-    wx.setStorageSync('villageName', this.data.listsItem[idx].name)
-    wx.setStorageSync('villageId', this.data.listsItem[idx].id)
     if (this.data.fromID == 0) {
+      wx.setStorageSync('villageName', this.data.listsItem[idx].name)
+      wx.setStorageSync('villageId', this.data.listsItem[idx].id)
       wx.switchTab({
         url: '/pages/home/index',
       })
     } else {
+      if (this.data.fromID == 1) {
+        var pages = getCurrentPages();
+        var currPage = pages[pages.length - 1]; //当前页面
+        var prevPage = pages[pages.length - 2];
+        prevPage.setData({
+          villageName: this.data.listsItem[idx].name,
+          villageId: this.data.listsItem[idx].id,
+          buildingName: '',
+          buildingId: '',
+          buildingIdArr: [],
+          index2: null,
+          picker2: [],
+          roomName: '',
+          roomId: '',
+          roomIdArr: [],
+          index3: null,
+          picker3: []
+        })
+        prevPage.getBuildingListRequest()
+      } else {
+        wx.setStorageSync('villageName', this.data.listsItem[idx].name)
+        wx.setStorageSync('villageId', this.data.listsItem[idx].id)
+      }
       wx.navigateBack({
         delta: 1,
       })
