@@ -14,7 +14,11 @@ Page({
     isDisable: false,
     type: 0,
     imgPath: '',
-    imgUrl: ''
+    imgUrl: '',
+
+    scale: 0.5,
+    cw0: "",
+    ch0: ""
   },
 
   /**
@@ -97,10 +101,71 @@ Page({
     var that = this
     wx.chooseImage({
       count: 1,
-      sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+      sizeType: ['compressed'], //可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'],
       success: (res) => {
-        that.onUploadImage(res.tempFilePaths[0]) //向服务器上传图片
+        let path = res.tempFilePaths[0];
+        let size = res.tempFiles[0].size / 1024;
+        if (size > 1024) { //大于1MB压缩
+          console.log('大于1MB')
+          wx.getImageInfo({
+            src: path,
+            success(res) {
+              console.log('获得原始图片大小', res.width)
+              let originWidth, originHeight;
+              originHeight = res.height;
+              originWidth = res.width;
+              console.log(originWidth);
+              //压缩比例
+              // 最大尺寸限制
+              let maxWidth = originWidth * that.data.scale,
+                maxHeight = originHeight * that.data.scale;
+              // 目标尺寸
+              let targetWidth = originWidth,
+                targetHeight = originHeight;
+              //等比例压缩，如果宽度大于高度，则宽度优先，否则高度优先
+              if (originWidth > maxWidth || originHeight > maxHeight) {
+                if (originWidth / originHeight > maxWidth / maxHeight) {
+                  // 要求宽度*(原生图片比例)=新图片尺寸
+                  targetWidth = maxWidth;
+                  targetHeight = Math.round(maxWidth * (originHeight / originWidth));
+                } else {
+                  targetHeight = maxHeight;
+                  targetWidth = Math.round(maxHeight * (originWidth / originHeight));
+                }
+              }
+              //更新canvas大小
+              that.setData({
+                cw0: targetWidth,
+                ch0: targetHeight
+              });
+              let id = "myCanvas1";
+              //尝试压缩文件，创建 canvas
+              let ctx = wx.createCanvasContext(id, that);
+              ctx.clearRect(0, 0, targetWidth, targetHeight);
+              ctx.drawImage(path, 0, 0, targetWidth, targetHeight);
+              ctx.draw(false, setTimeout(() => {
+                wx.canvasToTempFilePath({
+                  canvasId: id,
+                  success: (res) => {
+                    console.log(res)
+                    wx.hideLoading()
+                    //写入图片数组
+                    let uploadFile = res.tempFilePath;
+                    that.onUploadImage(uploadFile); //向服务器上传图片
+                  },
+                  fail: (err) => {
+                    console.error(err)
+                    wx.hideLoading()
+                  }
+                }, that)
+              }), 500)
+            }
+          })
+        } else {
+          console.log('小于1MB')
+          that.onUploadImage(path); //向服务器上传图片
+        }
       }
     });
   },

@@ -3,7 +3,7 @@
 <view class="account_container">
 	<view class="avator_container">
 		<text class="left_text">头像</text>
-		<image class="avator_img" src="{{faceImg?faceImgPath:'/images/mine/icon_avator.png'}}" bindtap="onPreviewTap"></image>
+		<image class="avator_img" mode="aspectFill" src="{{faceImg?faceImgPath:'/images/mine/icon_avator.png'}}" bindtap="onPreviewTap"></image>
 	</view>
 	<view class="line-view"></view>
 	<view class="list_container">

@@ -13,3 +13,4 @@
     </view>
   </view>
 </view>
+<canvas class="canvas" style="width: {{cw0}}px; height: {{ch0}}px;" canvas-id="myCanvas0"></canvas>

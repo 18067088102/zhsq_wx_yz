@@ -1,7 +1,7 @@
 <!--pages/face/index.wxml-->
 
 <view class="face_head">
-  <image class="face_img" src="{{faceImgPath?faceImgUrl:'/images/mine/icon_avator.png'}}" bindtap="onPreviewTap"></image>
+  <image class="face_img" mode="aspectFill" src="{{faceImgPath?faceImgUrl:'/images/mine/icon_avator.png'}}" bindtap="onPreviewTap"></image>
   <text class="face_title">已开通刷脸开门</text>
   <text class="face_detail">已成功开通刷脸开门 通过小区门禁</text>
 </view>

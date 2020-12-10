@@ -3,7 +3,7 @@
 <view class="mine_container">
 	<view class="account_info" bindtap="onClickAccount">
 		<view class="account_box">
-			<image class="avator_img" src="{{faceImgPath?faceImgUrl:'/images/mine/icon_avator.png'}}"></image>
+			<image class="avator_img" mode="aspectFill" src="{{faceImgPath?faceImgUrl:'/images/mine/icon_avator.png'}}"></image>
 			<view class="account_detail">
 				<text class="account_text">{{nameTitle}}</text>
 				<text class="account_detail">{{detailTitle}}</text>

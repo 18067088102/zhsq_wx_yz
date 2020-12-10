@@ -9,7 +9,7 @@
 			<view class="visitor_item cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" bindtouchstart='ListTouchStart'
 				bindtouchmove='ListTouchMove' bindtouchend='ListTouchEnd' data-target="move-box-{{index}}"
 				wx:for="{{listsItem}}" wx:key="k" bindtap="onDetail" data-index="{{index}}">
-				<image class="avator_img" src="{{faceImgArr[index]?faceImgArr[index]:'/images/mine/icon_avator.png'}}"></image>
+				<image class="avator_img" mode="aspectFill" src="{{faceImgArr[index]?faceImgArr[index]:'/images/mine/icon_avator.png'}}"></image>
 				<view class="visitor_right">
 					<view class="visitor_name">
 						<text class="name_text">{{item.visitorName}}</text>

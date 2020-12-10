@@ -22,3 +22,4 @@
 	<button class="submit-btn {{type==0?'':'submit-btn1'}}" loading="{{isLoading}}" bindtap="submitHandler"
 		disabled="{{isDisable}}">{{buttonText}}</button>
 </view>
+<canvas class="canvas" style="width: {{cw0}}px; height: {{ch0}}px;" canvas-id="myCanvas1"></canvas>

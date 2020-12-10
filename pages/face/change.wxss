@@ -86,3 +86,8 @@
 .submit-btn1 {
   margin-top: 298rpx;
 }
+
+.canvas {
+	position: absolute;
+	left: -4000px;
+}

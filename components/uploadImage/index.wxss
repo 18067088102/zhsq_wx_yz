@@ -2,3 +2,8 @@
 
 @import "../../colorui/main.wxss";
 @import "../../colorui/icon.wxss";
+
+.canvas {
+	position: absolute;
+	left: -4000px;
+}
