@@ -96,6 +96,7 @@ Page({
     request(api.uploadFeedBackUrl, {
       method: 'POST',
       data: {
+        villageId: wx.getStorageSync('villageId'),
         complaintDescription: that.data.textArea,
         complaintImages: that.data.imgList,
         complaintType: that.data.valueArr1[that.data.index1]
