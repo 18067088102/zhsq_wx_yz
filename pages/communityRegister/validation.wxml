@@ -57,5 +57,4 @@
   </view>
   <button class='submit-btn' loading="{{isLoading}}" bindtap="submitHandler"
     disabled="{{isDisable}}">{{buttonText}}</button>
-
 </view>
